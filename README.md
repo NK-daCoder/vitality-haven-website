@@ -1,4 +1,4 @@
-<h1>Vitality Haven: Transforming Fitness, One Line of Code at a Time 💪💻</h1>
+<h1>Vitality Haven: Transforming Fitness, <br>One Line of Code at a Time 💪💻</h1>
 <h2>Welcome to the Vitality Haven GitHub Repository! 🎉</h2>
 <p>
   At Vitality Haven, we believe that wellness is more than just fitness—it’s about creating a thriving community where health, happiness, and technology work hand in hand. 
