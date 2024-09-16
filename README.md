@@ -31,9 +31,6 @@
       👪🏽 Community Engagement: Features that foster communication between members, such as forums, chat, and event sign-ups.
   </li>
   <li>
-      👪🏽 Community Engagement: Features that foster communication between members, such as forums, chat, and event sign-ups.
-  </li>
-  <li>
     🕒 Performance Optimized: Built with performance and security in mind to ensure fast load times and secure handling of user data.
   </li>
 </ul>
