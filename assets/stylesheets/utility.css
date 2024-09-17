@@ -1,0 +1,106 @@
+
+:root {
+    --font-size-title-extra-large-001: clamp(2.5rem, 5vw + 0.5rem, 4rem);
+    --font-size-title-extra-large-002: clamp(2rem, 4vw + 0.5rem, 3rem);
+
+    --font-size-title-large-001: clamp(.9rem, 5vw, 2rem);
+    --font-size-title-large-002: clamp(1.5rem, 3vw + 0.5rem, 2rem);
+
+    --font-size-title-medium-001: clamp(.8rem, 5vw, .9rem);
+    --font-size-title-medium-002: clamp(1.2rem, 2vw + 0.5rem, 1.5rem);
+
+    --font-size-subtext-large-001: clamp(1rem, 1.5vw + 0.2rem, 1.2rem);
+    --font-size-subtext-large-002: clamp(0.8rem, 1vw + 0.2rem, 1rem);
+}
+
+/* ============================================== Text alignment ====================================== */
+
+.text-align--center {
+    text-align: center;
+}
+
+.text-align--left {
+    text-align: center;
+}
+
+.text-align--right {
+    text-align: center;
+}
+
+/* ============================================== Font-sizes ====================================== */
+
+.font-title--exl {
+    font-size: var(--font-size-title-large-001);
+}
+
+.font-title--ms {
+    font-size: var(--font-size-title-medium-001);
+}
+
+.font-subtext--l {
+    font-size: var(--font-size-subtext-001);
+}
+
+/* ========================================== Font Weight Utiles ==================================== */
+
+.font-thin { 
+    font-weight: 100; 
+}
+
+.font-light { 
+    font-weight: 300;
+}
+
+.font-normal {
+    font-weight: 400;
+}
+
+.font-medium {
+    font-weight: 500;
+}
+
+.font-bold {
+    font-weight: 700;
+}
+
+.font-black {
+    font-weight: 900;
+}
+
+/* ============================================== Unordered-list =========================================== */
+
+.ul-bullet--removed > li {
+    list-style-type: none;
+}
+
+.ul-list-links--remove-underline > li a {
+    text-decoration: none;
+}
+
+/* =============================================== Widths-Centerd Margins =================================================== */
+
+.width-xs {
+    width: clamp(10rem, 20vw, 15rem);
+}
+
+.width-sm {
+    width: clamp(15rem, 30vw, 25rem);
+}
+
+.width-md {
+    width: clamp(20rem, 40vw, 35rem);
+}
+
+.width-l {
+    width: clamp(30rem, 60vw, 50rem);
+}
+
+.width-xl {
+    width: clamp(40rem, 80vw, 70rem);
+}
+
+.width-xs, .width-xl, .width-l, 
+.width-md, .width-sm, .width-xs {
+    margin-inline: auto;
+}
+  
