@@ -103,4 +103,97 @@
 .width-md, .width-sm, .width-xs {
     margin-inline: auto;
 }
+
+/* =============================================== Images =================================================== */
+
+img {
+    width: 100%;
+    height: auto;
+}
+
+/* =============================================== flex-layouts =================================================== */
+
+.flex--row {
+    display: flex;
+}
+
+.flex--col {
+    display: flex;
+    flex-direction: column;
+}
+
+.flex--x-center {
+    display: flex;
+    justify-content: center;
+}
+
+.flex--y-center {
+    display: flex;
+    align-items: center;
+}
+
+.flex--center-all {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.flex--wrap {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.flex--no-wrap {
+    display: flex;
+    flex-wrap: nowrap;
+}
+
+/* ======================== Mobile =============================== */
+.flex--gap {
+    display: flex;
+    gap: clamp(10px, 2vw, 20px);
+}
+
+/* ======================== Tablet =============================== */
+@media (min-width: 768px) {
+    .flex--gap {
+      gap: clamp(15px, 3vw, 30px);
+    }
+}
   
+/* ======================== Desktop-TV =============================== */
+@media (min-width: 1200px) {
+    .flex--gap {
+        gap: clamp(20px, 4vw, 40px);
+    }
+}
+
+/* =============================================== grid-layouts =================================================== */
+
+/* ======================== Mobile =============================== */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(clamp(150px, 25%, 300px), 1fr));
+    gap: clamp(10px, 2vw, 20px);
+    padding: 10px;
+  }
+  
+  /* ======================== Tablet =============================== */
+  @media (min-width: 768px) {
+    .grid {
+      gap: clamp(15px, 3vw, 30px);
+      grid-template-columns: repeat(auto-fit, minmax(clamp(200px, 33%, 400px), 1fr));
+    }
+  }
+  
+  /* ======================== Desktop-TV =============================== */
+  @media (min-width: 1200px) {
+    .grid {
+      gap: clamp(20px, 4vw, 40px);
+      grid-template-columns: repeat(auto-fit, minmax(clamp(250px, 40%, 500px), 1fr));
+    }
+  }
+
+
+/* =============================================== Animations =================================================== */
+
