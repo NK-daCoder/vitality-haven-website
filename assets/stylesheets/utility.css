@@ -1,16 +1,302 @@
 
-/*---------------------header-animation-----------------------------------*/
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+:root {
+    --font-size-title-extra-large-001: clamp(2.5rem, 5vw + 0.5rem, 4rem);
+    --font-size-title-extra-large-002: clamp(2rem, 4vw + 0.5rem, 3rem);
+
+    --font-size-title-large-001: clamp(.9rem, 5vw, 2rem);
+    --font-size-title-large-002: clamp(1.5rem, 3vw + 0.5rem, 2rem);
+
+    --font-size-title-medium-001: clamp(.8rem, 5vw, .9rem);
+    --font-size-title-medium-002: clamp(1.2rem, 2vw + 0.5rem, 1.5rem);
+
+    --font-size-subtext-large-001: clamp(1rem, 1.5vw + 0.2rem, 1.2rem);
+    --font-size-subtext-large-002: clamp(0.8rem, 1vw + 0.2rem, 1rem);
+
+    --clr-dark: #070a12;
+    --clr-light: #f9f9fb;
+    --clr-accent: #353535;
+    --clr-rgba: rgba(51, 51, 51, 0.2);
+}
+
+/* ============================================== Text alignment ====================================== */
+
+.text-align--center {
+    text-align: center;
+}
+
+.text-align--left {
+    text-align: center;
+}
+
+.text-align--right {
+    text-align: center;
+}
+
+/* ============================================== Font-sizes ====================================== */
+
+.font-title--exl {
+    font-size: var(--font-size-title-large-001);
+}
+
+.font-title--ms {
+    font-size: var(--font-size-title-medium-001);
+}
+
+.font-subtext--l {
+    font-size: var(--font-size-subtext-001);
+}
+
+/* ========================================== Font Weight Utiles ==================================== */
+
+.font-thin { 
+    font-weight: 100; 
+}
+
+.font-light { 
+    font-weight: 300;
+}
+
+.font-normal {
+    font-weight: 400;
+}
+
+.font-medium {
+    font-weight: 500;
+}
+
+.font-bold {
+    font-weight: 700;
+}
+
+.font-black {
+    font-weight: 900;
+}
+
+/* ============================================== Unordered-list =========================================== */
+
+.ul-bullet--removed > li {
+    list-style-type: none;
+}
+
+.ul-list-links--remove-underline > li a {
+    text-decoration: none;
+}
+
+/* =============================================== Widths-Centerd Margins =================================================== */
+
+.width-xs {
+    width: clamp(10rem, 20vw, 15rem);
+}
+
+.width-sm {
+    width: clamp(15rem, 30vw, 25rem);
+}
+
+.width-md {
+    width: clamp(20rem, 40vw, 35rem);
+}
+
+.width-l {
+    width: clamp(30rem, 60vw, 50rem);
+}
+
+.width-xl {
+    width: clamp(40rem, 80vw, 70rem);
+}
+
+.width-xs, .width-xl, .width-l, 
+.width-md, .width-sm, .width-xs {
+    margin-inline: auto;
+}
+
+/* =============================================== Images =================================================== */
+
+img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+/* =============================================== flex-layouts =================================================== */
+
+.flex--row {
+    display: flex;
+}
+
+.flex--col {
+    display: flex;
+    flex-direction: column;
+}
+
+.flex--x-center {
+    display: flex;
+    justify-content: center;
+}
+
+.flex--y-center {
+    display: flex;
+    align-items: center;
+}
+
+.flex--center-all {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.flex--wrap {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.flex--no-wrap {
+    display: flex;
+    flex-wrap: nowrap;
+}
+
+/* ======================== Mobile =============================== */
+.flex--gap {
+    display: flex;
+    gap: clamp(10px, 2vw, 20px);
+}
+
+/* ======================== Tablet =============================== */
+@media (min-width: 768px) {
+    .flex--gap {
+      gap: clamp(15px, 3vw, 30px);
+    }
+}
+  
+/* ======================== Desktop-TV =============================== */
+@media (min-width: 1200px) {
+    .flex--gap {
+        gap: clamp(20px, 4vw, 40px);
+    }
+}
+
+/* =============================================== grid-layouts =================================================== */
+
+/* ======================== Mobile =============================== */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(clamp(150px, 25%, 300px), 1fr));
+    gap: clamp(10px, 2vw, 20px);
+    padding: 10px;
+}
+  
+  /* ======================== Tablet =============================== */
+  @media (min-width: 768px) {
+    .grid {
+      gap: clamp(15px, 3vw, 30px);
+      grid-template-columns: repeat(auto-fit, minmax(clamp(200px, 33%, 400px), 1fr));
+    }
+}
+  
+  /* ======================== Desktop-TV =============================== */
+  @media (min-width: 1200px) {
+    .grid {
+      gap: clamp(20px, 4vw, 40px);
+      grid-template-columns: repeat(auto-fit, minmax(clamp(250px, 40%, 500px), 1fr));
+    }
+}
+
+/* ========================== For content within grid container ======================== */
+.grid-center-x {
+    display: grid;
+    justify-items: center;
+}
+
+.grid-stretch-x {
+    display: grid;
+    justify-items: stretch;
+}
+
+.grid-right-align-x {
+    display: grid;
+    justify-items: end;
+}
+
+.grid-left-align-x {
+    display: grid;
+    justify-items: start;
+}
+
+.grid-top-align-y {
+    display: grid;
+    align-items: start;
+}
+
+.grid-bottom-align-y {
+    display: grid;
+    align-items: end;
+}
+
+.grid-stretch-align-y {
+    display: grid;
+    align-items: stretch;
+}
+
+/* =============================================== Wrappers =================================================== */
+
+.grid-align--center {
+    display: grid;
+    place-items: center;
+}
+
+.grid-align--left {
+    display: grid;
+    justify-content: start;
+}
+
+.grid-align--right {
+    display: grid;
+    justify-content: end;
+}
+
+.grid-align--stretch {
+    display: grid;
+    justify-content: stretch;
+}
+
+.grid-align--space-around-x {
+    display: grid;
+    justify-content: space-around;
+}
+
+.grid-align--space-between-x {
+    display: grid;
+    justify-content: space-between;
+}
+
+.grid-align--space-evenly-x {
+    display: grid;
+    justify-content: space-evenly;
+}
+
+.grid-align--space-around-y {
+    display: grid;
+    align-content: space-around;
+}
+
+.grid-align--space-between-y {
+    display: grid;
+    align-content: space-between;
+}
+
+.grid-align--space-evenly-y {
+    display: grid;
+    align-content: space-evenly;
+}
+
+/* =============================================== Animations =================================================== */
 
 .header-image {
-    grid-column: 1 / -1;
-    position: absolute;
-    inset: 0;
-    opacity: 0.5;
-    object-fit: cover;
-    z-index: -1;
-
-    transform-origin: top;
-
     animation: header-img-animation linear forwards;
     animation-timeline: view() ;
     animation-range: exit ;
@@ -56,76 +342,76 @@
     to {
       transform: translateX(0);
     }
-  }
+}
   
   .slideInLeft {
     animation-name: slideInLeft;
     animation-timing-function: ease-in;
-  }
+}
   
 /*---------------------slide-in-right-animation-----------------------------------*/
 
-  @keyframes slideInRight {
+@keyframes slideInRight {
     from {
-      transform: translateX(300px);
+        transform: translateX(300px);
     }
-  
+
     to {
-      transform: translateX(0);
+        transform: translateX(0);
     }
-  }
-  
-  .slideInRight {
+}
+
+.slideInRight {
     animation-name: slideInRight;
     animation-timing-function: ease-in;
-  }
+}
 
 /*---------------------rotate-animation-----------------------------------*/
 
-  @keyframes rotate {
+@keyframes rotate {
     from {
-      transform: rotate(0);
+        transform: rotate(0);
     }
-  
+
     to {
-      transform: rotate(360deg);
+        transform: rotate(360deg);
     }
-  }
+}
   
-  .rotate {
+.rotate {
     animation-name: rotate;
     animation-timing-function: linear;
-  
+
     transform-origin: top left;
-  }
+}
 
   /*---------------------bounce-animation-----------------------------------*/
   
-  @keyframes bounce {
+@keyframes bounce {
     0%,
     20%,
     50%,
     80%,
     100% {
-      transform: translateY(0);
+        transform: translateY(0);
     }
-  
+
     40% {
-      transform: translateY(-30px);
+        transform: translateY(-30px);
     }
-  
+
     60% {
-      transform: translateY(-15px);
+        transform: translateY(-15px);
     }
-  }
-  
-  .bounce {
+}
+
+.bounce {
     animation-name: bounce;
-  }
+}
 
-  /********logo-slider*********/
+  /* =============================================== logo-slider =================================================================== */
 
-  .slider{
+.slider{
     width: 100%;
     height: var(--height);
     overflow: hidden;
@@ -136,12 +422,14 @@
         transparent
     );
 }
+
 .slider .list{
     display: flex;
     width: 100%;
     min-width: calc(var(--width) * var(--quantity));
     position: relative;
 }
+
 .slider .list .item{
     width: var(--width);
     height: var(--height);
@@ -151,9 +439,11 @@
     transition: filter 0.5s;
     animation-delay: calc( (10s / var(--quantity)) * (var(--position) - 1) - 10s)!important;
 }
+
 .slider .list .item img{
     width: 100%;
 }
+
 @keyframes autoRun{
     from{
         left: 100%;
@@ -161,16 +451,20 @@
         left: calc(var(--width) * -1);
     }
 }
+
 .slider:hover .item{
     animation-play-state: paused!important;
     filter: grayscale(1);
 }
+
 .slider .item:hover{
     filter: grayscale(0);
 }
+
 .slider[reverse="true"] .item{
     animation: reversePlay 10s linear infinite;
 }
+
 @keyframes reversePlay{
     from{
         left: calc(var(--width) * -1);
@@ -178,27 +472,10 @@
         left: 100%;
     }
 }
-
-
-
-
-/*******trasitions*******/
-:root {
-    --clr-dark: #070a12;
-    --clr-light: #f9f9fb;
-    --clr-accent: #353535;
-    --clr-rgba: rgba(51, 51, 51, 0.2);
-  }
   
-  *,
-  *::before,
-  *::after {
-    box-sizing: border-box;
-  }
+/* ========================================== btn-transition ================================================= */
   
-/*---------------------btn-transition-----------------------------------*/
-  
-  .btn {
+.btn {
     font-size: 2rem;
     font-weight: 700;
     padding: 0.5em 1em;
@@ -213,10 +490,10 @@
     transition-delay: 0s;
   
     /* transition: all 0.3s; */
-  }
+}
   
-  .btn:hover {
+.btn:hover {
     transform: translateY(-10px);
      background-color: var(--clr-accent);
     color: var(--clr-light); 
-  }
+}
