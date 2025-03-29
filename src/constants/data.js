@@ -5,8 +5,22 @@ import instagramicon from "../assets/images/logo/instagram.svg";
 import tickTockIcon from "../assets/images/logo/tikTock.svg";
 import twitter from "../assets/images/logo/twitter";
 
+import equinox from "../assets/images/companies/trusted-by-gyms/equinox.svg";
+import myGym from "../assets/images/companies/trusted-by-gyms/mygym-cape-town.svg";
+import soulcycle from "../assets/images/companies/trusted-by-gyms/soulcycle.png";
+import barMethod from "../assets/images/companies/trusted-by-gyms/the-bar-method.svg";
+import viginActive from "../assets/images/companies/trusted-by-gyms/virgin-active.svg";
+
+import manLiftSquad from "../assets/images/wallpaper/liftingSquat.jpg";
+import femaleCardioWorkout from "../assets/images/wallpaper/personal-training.jpg";
+import ropSwing from "../assets/images/wallpaper/ropeswinging.jpg";
+import femaleBoxingPractice from "../assets/images/wallpaper/boxing.jpg";
+import femalePullups from "../assets/images/wallpaper/womenDoinPullup.jpg";
+import fatManWithKettleBell from "../assets/images/wallpaper/fatman-kettlebel.jpg";
+import yogaGroup from "../assets/images/wallpaper/group-yoga.jpg"
+
 import gymCouple from "../assets/images/wallpaper/couple.png";
-import man from "../assets/images/cutout/man.png"
+import man from "../assets/images/cutout/man.png";
 
 
 
@@ -22,6 +36,26 @@ const cutOut = {
     gymCouple: gymCouple,
     manPumpIron: man
 }
+
+const trustedCompanies = {
+    companyOne: equinox,
+    companyTwo: myGym,
+    conpanyThree: soulcycle,
+    companyFour: barMethod, 
+    companyFive: viginActive
+}
+
+const decoration = {
+    manLiftSquad: manLiftSquad,
+    femaleAbonomalWorkout: femaleCardioWorkout,
+    heavyRopeWorkout: ropSwing,
+    femaleBoxing: femaleBoxingPractice,
+    femalePullups: femalePullups,
+    fatmansKettleBells: fatManWithKettleBell,
+    yogaGroup: yogaGroup,
+}
+
+
 
 
 const vitalityHaven = {
@@ -907,6 +941,30 @@ const vitalityHaven = {
         description: "Members can bring a friend for free January 8-14!",
         expires: "2024-01-14"
       }
+    ],
+
+    amenities: [
+        {
+            id: "amenities-0",
+            type: "spa"
+        },
+        {
+            id: "amenities-1",
+            type: "pool"
+        },
+        {
+            id: "amenities-2",
+            type: "cryotherapy chamber"
+        },
+        {
+            id: "amenities-2",
+            type: "cryotherapy chamber"
+        },
+        {
+            id: "amenities-3",
+            type: "rooftop yoga deck"
+        }
+        
     ]
 };
   
@@ -1002,9 +1060,14 @@ const compareMemberships = () => {
 }
 
 
-  
-// Initialize some sample displays
+
 displayFeaturedClasses();
 compareMemberships();
 
-export { socialMediaIcons, cutOut, vitalityHaven } 
+export { 
+    socialMediaIcons, 
+    cutOut, 
+    vitalityHaven, 
+    trustedCompanies, 
+    decoration 
+} 
