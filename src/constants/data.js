@@ -31,6 +31,11 @@ const vitalityHaven = {
       slogan: "Where Strength Meets Serenity",
       description: "A premium fitness sanctuary offering state-of-the-art equipment, expert trainers, and holistic wellness programs designed to transform your body and mind.",
       founded: 2015,
+      yearsInBusiness: 10,
+      totalMembers: 3500,
+      expertTrainers: 12,
+      // calculated based on the number of classes per day 
+      weeklyClasses: 60, 
       locations: [
         {
           id: 1,
@@ -55,6 +60,463 @@ const vitalityHaven = {
           amenities: ["Rooftop Yoga Deck", "Cryotherapy", "Smoothie Bar", "Physical Therapy"]
         }
       ]
+    },
+
+    onlineCourses: [
+      {
+          id: "oc-101",
+          title: "Calisthenics Mastery: Bodyweight Excellence",
+          instructor: "Marcus Johnson",
+          category: "Strength & Mobility",
+          level: ["Beginner", "Intermediate", "Advanced"],
+          description: "Unlock your body's potential through progressive bodyweight training. This comprehensive program blends strength, mobility, and control for complete physical mastery.",
+          duration: "8 weeks",
+          format: "Self-paced with weekly live Q&A",
+          price: 149,
+          premiumMemberDiscount: true,
+          features: [
+              "Progressive skill pyramids from basic to advanced moves",
+              "Injury prevention protocols",
+              "Mobility drills for optimal movement",
+              "Program customization based on your level",
+              "Private community forum",
+              "Form critique videos"
+          ],
+          modules: [
+              {
+                  title: "Foundation Phase",
+                  lessons: [
+                      "The Science of Bodyweight Leverage",
+                      "Perfecting Pushup Mechanics",
+                      "Squat Progressions for Joint Health",
+                      "Hanging & Grip Strength Basics"
+                  ]
+              },
+              {
+                  title: "Control Phase",
+                  lessons: [
+                      "Core Sequencing for Advanced Moves",
+                      "Pull-up Variations Pyramid",
+                      "Handstand Preparation Drills",
+                      "Eccentric Training Protocols"
+                  ]
+              },
+              {
+                  title: "Expression Phase",
+                  lessons: [
+                      "Muscle-up Breakdown",
+                      "Planche Progressions",
+                      "Front Lever Training System",
+                      "Freestyle Flow Choreography"
+                  ]
+              }
+          ],
+          bonuses: [
+              "Exclusive Access to Vitality Haven Calisthenics Park",
+              "Monthly Live Workshops with Marcus",
+              "Nutrition Guide for Bodyweight Athletes"
+          ],
+          certification: "Vitality Haven Calisthenics Certificate (upon completion)"
+      },
+      {
+          id: "oc-202",
+          title: "Elite Home Training System",
+          instructor: "Sarah Miller",
+          category: "Home Fitness",
+          level: ["Beginner", "Intermediate"],
+          description: "Transform any space into your personal fitness studio with minimal equipment. Our holistic approach combines movement science with practical space solutions.",
+          duration: "6 weeks",
+          format: "Daily guided workouts + educational modules",
+          price: 99,
+          premiumMemberDiscount: true,
+          features: [
+              "Equipment alternatives using household items",
+              "Space optimization strategies",
+              "Time-efficient metabolic circuits",
+              "Noise-conscious routines for apartments",
+              "Family-friendly workout modifications"
+          ],
+          modules: [
+              {
+                  title: "Space Solutions",
+                  lessons: [
+                      "5-Zone Home Gym Design",
+                      "Furniture-as-Equipment Hacks",
+                      "Micro-Workout Scheduling",
+                      "Outdoor Space Utilization"
+                  ]
+              },
+              {
+                  title: "Movement Modalities",
+                  lessons: [
+                      "Resistance Band Mastery",
+                      "Chair-Based Strength Series",
+                      "Bodyweight-Only Cardio",
+                      "Recovery in Restricted Spaces"
+                  ]
+              }
+          ],
+          bonuses: [
+              "Printable Home Workout Blueprint",
+              "Virtual Home Gym Assessment",
+              "Private Facebook Community"
+          ],
+          equipmentRequired: "Yoga mat, resistance bands (provided for premium members)"
+      },
+      {
+          id: "oc-303",
+          title: "Next-Gen Fitness Coach Certification",
+          instructor: "All Master Trainers",
+          category: "Professional Development",
+          level: ["Advanced"],
+          description: "Our flagship trainer education program blending cutting-edge science with proven coaching methodologies. Elevate your skills beyond basic certification.",
+          duration: "12 weeks",
+          format: "Live lectures + practicum",
+          price: 899,
+          accreditation: "4.0 ACE CECs, NASM approved",
+          features: [
+              "Biomechanics Deep Dive",
+              "Advanced Cueing Systems",
+              "Client Psychology Frameworks",
+              "Business Building Modules",
+              "Virtual Training Mastery",
+              "Vitality Haven Coaching Methodology"
+          ],
+          modules: [
+              {
+                  title: "Science Foundations",
+                  lessons: [
+                      "Neuro-Mechanical Training Principles",
+                      "Metabolic Flexibility Protocols",
+                      "Pain vs. Injury Differentiation",
+                      "Hormonal Impact of Training Styles"
+                  ]
+              },
+              {
+                  title: "Coaching Artistry",
+                  lessons: [
+                      "Motivational Interviewing Techniques",
+                      "Non-Verbal Communication Analysis",
+                      "Adaptive Programming Systems",
+                      "Group Energy Management"
+                  ]
+              },
+              {
+                  title: "Business Integration",
+                  lessons: [
+                      "Digital Client Acquisition",
+                      "Premium Service Design",
+                      "Legal Considerations for Coaches",
+                      "Brand Development Frameworks"
+                  ]
+              }
+          ],
+          practicum: [
+              "20 hours supervised coaching",
+              "Program design submission",
+              "Mock client sessions",
+              "Business plan development"
+          ],
+          certification: "Vitality Haven Master Coach Credential",
+          prerequisites: "Current CPT certification or exercise science degree"
+      },
+      {
+          id: "oc-404",
+          title: "Mind-Body Fusion: Yoga & Calisthenics Synergy",
+          instructor: "Nadia Chen & Marcus Johnson",
+          category: "Hybrid Training",
+          level: ["Intermediate", "Advanced"],
+          description: "A revolutionary blend of yoga's mindfulness with calisthenics' strength. Develop fluid power and resilient mobility simultaneously.",
+          duration: "4 weeks",
+          format: "Live-streamed sessions + community platform",
+          price: 129,
+          features: [
+              "Proprioception enhancement drills",
+              "Breath-to-movement linking",
+              "Transitional flow development",
+              "Injury resilience protocols"
+          ],
+          schedule: [
+              "Monday: Strength-Focused Flow",
+              "Wednesday: Mobility Deep Dives",
+              "Friday: Creative Sequencing Labs"
+          ],
+          bonuses: [
+              "Exclusive Mobility Assessment Tools",
+              "Live Student Showcase Events",
+              "Digital Pose Library"
+          ]
+      },
+      {
+        id: "oc-505",
+        title: "Neuro-Fitness: Train Your Brain for Peak Performance",
+        instructor: "Dr. Rebecca Stern (Neuroscience Consultant) & Marcus Johnson",
+        category: "Mind-Body Science",
+        level: ["All Levels"],
+        description: "Harness cutting-edge neuroscience to optimize workouts, recovery, and results. This course reveals how to 'hack' your nervous system for faster gains, better motivation, and enhanced mind-muscle connection.",
+        duration: "5 weeks",
+        format: "Weekly deep-dive modules + interactive neuro-tracking",
+        price: 179,
+        premiumMemberDiscount: true,
+        features: [
+            "Proprietary Neuro-Fitness Assessment™",
+            "Brainwave-based recovery tracking",
+            "Dopamine-driven workout structuring",
+            "Pain modulation techniques",
+            "Cognitive priming exercises",
+            "Real-time biofeedback integration (compatible with Apple Watch/Whoop)"
+        ],
+        modules: [
+            {
+                title: "The Lifting Brain",
+                lessons: [
+                    "Neuroplasticity in Strength Training",
+                    "Motor Cortex Mapping for Better Form",
+                    "The Cerebellum's Role in Coordination",
+                    "Mirror Neuron Workout Partners"
+                ],
+                practical: "Muscle Activation Scan Technique"
+            },
+            {
+                title: "Neurochemistry of Gains",
+                lessons: [
+                    "Dopamine Scheduling for Consistency",
+                    "Endorphin Management for Pain Tolerance",
+                    "BDNF: The 'Miracle Grow' Protein",
+                    "Optimizing Cortisol Rhythms"
+                ],
+                practical: "Pre-Workout Neuro-Cocktail Design"
+            },
+            {
+                title: "Cognitive Performance",
+                lessons: [
+                    "Attention Cycling for Marathon Sessions",
+                    "Decision Fatigue in Program Design",
+                    "The 90-Minute Ultradian Rhythm Rule",
+                    "Neurovascular Coupling for Pump"
+                ],
+                practical: "Focus-Rep Correlation Tracking"
+            },
+            {
+                title: "Recovery Neurology",
+                lessons: [
+                    "Sleep Spindle Enhancement",
+                    "Vagus Nerve Stimulation Drills",
+                    "Glymphatic System Flushing",
+                    "Neuroinflammation Reduction"
+                ],
+                practical: "Post-Workout Neural Reset Protocol"
+            }
+        ],
+        neuroscienceTools: [
+            "HRV Monitoring Guide",
+            "Neuro-Performance Scorecard",
+            "Mental Fatigue Threshold Calculator",
+            "Proprioception Enhancement Kit (shipped to premium members)"
+        ],
+        certification: "Vitality Haven Neuro-Athlete Certification",
+        researchPartners: [
+            "Columbia University Motor Learning Lab",
+            "NeuroFit Institute"
+        ],
+        bonuses: [
+            "Private Brain-Body Coaching Session",
+            "Annual 'Neuro-Fitness' Symposium Access",
+            "Smart Supplements Starter Pack (for first 50 enrollees)"
+        ]
+      }
+    ],
+
+    services: {
+      // Personal Training & Coaching  
+      personalTraining: {
+          title: "Bespoke Performance Coaching",
+          tiers: [
+              {
+                  name: "Foundational Coaching",
+                  for: "New members or those rebuilding fundamentals",
+                  includes: [
+                      "1-on-1 movement assessment",
+                      "Customized starter program",
+                      "Bi-weekly form checks",
+                      "Nutritional foundations guide",
+                      "Access to 'Essentials' video library"
+                  ],
+                  price: "$199/month"
+              },
+              {
+                  name: "Elite Performance",
+                  for: "Athletes and serious fitness enthusiasts",
+                  includes: [
+                      "3+ sessions/week with dedicated coach",
+                      "Biomechanical video analysis",
+                      "Sports-specific periodization",
+                      "Advanced recovery protocols (red light therapy, cryo)",
+                      "Metabolic testing"
+                  ],
+                  price: "$799/month"
+              },
+              {
+                  name: "Concierge Coaching",
+                  for: "Executives and high-profile clients",
+                  includes: [
+                      "24/7 coach access via VIP channel",
+                      "Home/gym hybrid training",
+                      "Travel workout programming",
+                      "Stress resilience coaching",
+                      "Quarterly retreats"
+                  ],
+                  price: "Custom pricing"
+              }
+          ],
+          note: "All tiers include AI-powered progress tracking and monthly goal reviews."
+      },
+  
+      // Rehabilitation & Prehab  
+      rehabServices: {
+          title: "Restorative Movement Clinic",
+          options: [
+              {
+                  name: "Post-Injury Rebuild",
+                  for: "Post-physical therapy conditioning",
+                  includes: [
+                      "Collaboration with your medical team",
+                      "Joint-friendly strength progressions",
+                      "Scar tissue mobilization",
+                      "Proprioception retraining"
+                  ],
+                  price: "$120/session"
+              },
+              {
+                  name: "Prehab for Athletes",
+                  for: "Injury prevention for sport-specific demands",
+                  includes: [
+                      "Movement asymmetry screening",
+                      "Rotator cuff/ACL resilience drills",
+                      "Dynamic stability programming",
+                      "Recovery nutrition plan"
+                  ],
+                  price: "$150/session"
+              }
+          ],
+          tech: "Uses Force Plate Analysis and EMG muscle activation scans."
+      },
+  
+      // Group Experiences  
+      groupServices: {
+          title: "Curated Community Training",
+          offerings: [
+              {
+                  name: "Squad Goals (Small Group PT)",
+                  for: "Friends or accountability partners",
+                  benefits: [
+                      "3-5 person tailored sessions",
+                      "Shared progress dashboard",
+                      "Themed challenges (e.g., 'Tour de Squat')",
+                      "30% discount vs. 1-on-1"
+                  ],
+                  price: "$45/person/session"
+              },
+              {
+                  name: "Corporate Wellness Pods",
+                  for: "Companies investing in employee health",
+                  benefits: [
+                      "On-site or gym-based sessions",
+                      "Ergonomic workstation assessments",
+                      "Lunch-and-learn nutrition talks",
+                      "Step/HRV team competitions"
+                  ],
+                  price: "Custom packages"
+              }
+          ]
+      },
+  
+      // Wellness & Recovery  
+      recoveryServices: {
+          title: "Regeneration Lounge",
+          menu: [
+              {
+                  name: "The Executive Reset",
+                  includes: [
+                      "30-min percussion massage",
+                      "15-min guided breathwork",
+                      "CBD-infused hydration",
+                      "Post-session cognitive clarity tea"
+                  ],
+                  price: "$95"
+              },
+              {
+                  name: "Athlete Overhaul",
+                  includes: [
+                      "PEMF (Pulsed Electromagnetic Field) therapy",
+                      "Lymphatic drainage session",
+                      "Float tank immersion",
+                      "Post-treatment amino IV drip"
+                  ],
+                  price: "$250"
+              }
+          ],
+          addOns: [
+              "Cryofacial ($45)",
+              "Neurofeedback session ($80)",
+              "Sleep hygiene consultation ($60)"
+          ]
+      },
+  
+      // Tech-Enhanced Services  
+      techServices: {
+          title: "Digital Integration Suite",
+          offerings: [
+              {
+                  name: "Virtual Form Coach",
+                  howItWorks: "Upload workout videos for AI-powered form analysis",
+                  features: [
+                      "48-hour turnaround with trainer notes",
+                      "3D joint angle measurements",
+                      "Personalized cue library"
+                  ],
+                  price: "$29/month"
+              },
+              {
+                  name: "Biometric Blueprint",
+                  howItWorks: "Comprehensive testing for data-driven programming",
+                  tests: [
+                      "VO2 max testing",
+                      "DEXA body composition scan",
+                      "Heart rate variability (HRV) baseline",
+                      "Genetic fitness markers (via partner lab)"
+                  ],
+                  price: "$399 (annual update $249)"
+              }
+          ]
+      },
+  
+      // Specialized Populations  
+      nicheServices: {
+          title: "Tailored For You",
+          programs: [
+              {
+                  name: "Golden Vitality (65+)",
+                  focus: [
+                      "Bone density preservation",
+                      "Fall prevention drills",
+                      "Social workout cohorts",
+                      "Cognitive-movement integration"
+                  ],
+                  price: "$159/month"
+              },
+              {
+                  name: "Teen Athletic Development",
+                  focus: [
+                      "Growth plate-safe programming",
+                      "College sports prep",
+                      "Confidence-building through fitness",
+                      "Injury resilience education"
+                  ],
+                  price: "$129/month"
+              }
+          ]
+      }
     },
   
     // Membership Plans
@@ -247,7 +709,8 @@ const vitalityHaven = {
             image: "/trainers/priya.jpg",
             availableForPT: true,
             classes: ["Yin Yoga & Sound Bath", "Family Yoga", "Sunset Stretch"]
-        }
+        },
+        
     ],
   
     // Testimonials
