@@ -1,13 +1,12 @@
 
-import faceBookIcon from "../assets/images/logo/facebook.svg";
-import youTubeIcon from "../assets/images/logo/youtube.svg";
-import instagramicon from "../assets/images/logo/instagram.svg";
-import tickTockIcon from "../assets/images/logo/tikTock.svg";
-import twitter from "../assets/images/logo/twitter";
+import faceBookIcon from "../assets/images/logo/facebook.png";
+import youTubeIcon from "../assets/images/logo/youtube.png";
+import instagramicon from "../assets/images/logo/instagram.png";
+import twitterIcon from "../assets/images/logo/twitter.png";
 
 import equinox from "../assets/images/companies/trusted-by-gyms/equinox.svg";
 import myGym from "../assets/images/companies/trusted-by-gyms/mygym-cape-town.svg";
-import soulcycle from "../assets/images/companies/trusted-by-gyms/soulcycle.png";
+import soulcycle from "../assets/images/companies/trusted-by-gyms/soulcycle.svg";
 import barMethod from "../assets/images/companies/trusted-by-gyms/the-bar-method.svg";
 import viginActive from "../assets/images/companies/trusted-by-gyms/virgin-active.svg";
 
@@ -19,23 +18,44 @@ import femalePullups from "../assets/images/wallpaper/womenDoinPullup.jpg";
 import fatManWithKettleBell from "../assets/images/wallpaper/fatman-kettlebel.jpg";
 import yogaGroup from "../assets/images/wallpaper/group-yoga.jpg"
 
-import gymCouple from "../assets/images/wallpaper/couple.png";
+import gymCouple from "../assets/images/cutout/couple.png";
 import man from "../assets/images/cutout/man.png";
 
+import vitalityHavenLogoWhite from "../assets/vitality-haven-logo.svg";
+import vitalityHavenLogoBlack from "../assets/vitality-haven-logo--black.svg";
 
+const vitalityHavenLogo = {
+    mainLogoWhite: vitalityHavenLogoWhite,
+    mainLogoBlack: vitalityHavenLogoBlack
+};
 
-const socialMediaIcons = {
-    twitter: twitter,
-    faceBook: faceBookIcon,
-    tikTock: tickTockIcon,
-    youTube: youTubeIcon, 
-    instagram: instagramicon
-}
+const socialMediaIcons = [
+    { 
+        mediaIcon: twitterIcon,
+        url: "#",
+        text: "twitter"
+    },
+    { 
+        mediaIcon: faceBookIcon ,
+        url: "#",
+        text: "facebook"
+    },
+    { 
+        mediaIcon: youTubeIcon ,
+        url: "#",
+        text: "youtube"
+    }, 
+    { 
+        mediaIcon: instagramicon ,
+        url: "#",
+        text: "instagram"
+    }
+];
 
 const cutOut = {
     gymCouple: gymCouple,
     manPumpIron: man
-}
+};
 
 const trustedCompanies = {
     companyOne: equinox,
@@ -43,7 +63,7 @@ const trustedCompanies = {
     conpanyThree: soulcycle,
     companyFour: barMethod, 
     companyFive: viginActive
-}
+};
 
 const decoration = {
     manLiftSquad: manLiftSquad,
@@ -53,9 +73,7 @@ const decoration = {
     femalePullups: femalePullups,
     fatmansKettleBells: fatManWithKettleBell,
     yogaGroup: yogaGroup,
-}
-
-
+};
 
 
 const vitalityHaven = {
@@ -1060,7 +1078,6 @@ const compareMemberships = () => {
 }
 
 
-
 displayFeaturedClasses();
 compareMemberships();
 
@@ -1069,5 +1086,6 @@ export {
     cutOut, 
     vitalityHaven, 
     trustedCompanies, 
-    decoration 
+    decoration,
+    vitalityHavenLogo
 } 
