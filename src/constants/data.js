@@ -57,13 +57,6 @@ const cutOut = {
     manPumpIron: man
 };
 
-const trustedCompanies = {
-    companyOne: equinox,
-    companyTwo: myGym,
-    conpanyThree: soulcycle,
-    companyFour: barMethod, 
-    companyFive: viginActive
-};
 
 const decoration = {
     manLiftSquad: manLiftSquad,
@@ -82,37 +75,68 @@ const vitalityHaven = {
       name: "Vitality Haven",
       slogan: "Where Strength Meets Serenity",
       description: "A premium fitness sanctuary offering state-of-the-art equipment, expert trainers, and holistic wellness programs designed to transform your body and mind.",
-      founded: 2015,
-      yearsInBusiness: 10,
-      totalMembers: 3500,
-      expertTrainers: 12,
-      // calculated based on the number of classes per day 
-      weeklyClasses: 60, 
-      locations: [
+      gymStats: {
+        founded: 2015,
+        yearsInBusiness: 10,
+        totalMembers: 3500,
+        expertTrainers: 12,
+        members: 5000,
+        // calculated based on the number of classes per day 
+        weeklyClasses: 60, 
+        locations: [
+            {
+            id: 1,
+            name: "Downtown Oasis",
+            address: "123 Wellness Way, Metropolis, NY 10001",
+            phone: "(555) 123-4567",
+            hours: {
+                weekdays: "5:00 AM - 11:00 PM",
+                weekends: "7:00 AM - 9:00 PM"
+            },
+            amenities: ["Indoor Pool", "Sauna", "Juice Bar", "Childcare"]
+            },
+            {
+            id: 2,
+            name: "Uptown Retreat",
+            address: "456 Tranquility Trail, Metropolis, NY 10010",
+            phone: "(555) 987-6543",
+            hours: {
+                weekdays: "6:00 AM - 10:00 PM",
+                weekends: "8:00 AM - 8:00 PM"
+            },
+            amenities: ["Rooftop Yoga Deck", "Cryotherapy", "Smoothie Bar", "Physical Therapy"]
+            }
+        ]
+      }
+    },
+
+    trustedCompanies: [
         {
-          id: 1,
-          name: "Downtown Oasis",
-          address: "123 Wellness Way, Metropolis, NY 10001",
-          phone: "(555) 123-4567",
-          hours: {
-            weekdays: "5:00 AM - 11:00 PM",
-            weekends: "7:00 AM - 9:00 PM"
-          },
-          amenities: ["Indoor Pool", "Sauna", "Juice Bar", "Childcare"]
+            id: 1,
+            name: "equinox",
+            logo: equinox
         },
         {
-          id: 2,
-          name: "Uptown Retreat",
-          address: "456 Tranquility Trail, Metropolis, NY 10010",
-          phone: "(555) 987-6543",
-          hours: {
-            weekdays: "6:00 AM - 10:00 PM",
-            weekends: "8:00 AM - 8:00 PM"
-          },
-          amenities: ["Rooftop Yoga Deck", "Cryotherapy", "Smoothie Bar", "Physical Therapy"]
-        }
-      ]
-    },
+            id: 2,
+            name: "myGym",
+            logo: myGym
+        },
+        {
+            id: 3,
+            name: "soulcycle",
+            logo: soulcycle
+        },
+        {
+            id: 4,
+            name: "barMethod",
+            logo: barMethod
+        },
+        {
+            id: 5,
+            name: "virginActive",
+            logo: viginActive
+        },
+    ],
 
     onlineCourses: [
       {
@@ -1084,8 +1108,7 @@ compareMemberships();
 export { 
     socialMediaIcons, 
     cutOut, 
-    vitalityHaven, 
-    trustedCompanies, 
+    vitalityHaven,
     decoration,
     vitalityHavenLogo
 } 

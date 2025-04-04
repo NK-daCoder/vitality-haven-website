@@ -1,7 +1,7 @@
 import React from 'react'
 import { socialMediaIcons, vitalityHaven, vitalityHavenLogo } from './constants/data';
 import { DesktopNavigation } from './Components/Navigation';
-import HeroSection from './Components/HeroSection';
+import { AboutSection, CompaniesSection, HeroSection } from './Components/Sections';
 
 const App = () => {
   return (
@@ -38,14 +38,30 @@ const App = () => {
           webm: '/path/to/video.webm',
           mp4: './src/assets/video/promotional-video.mp4'
         }}
-        backgroundImage="https://t3.ftcdn.net/jpg/03/14/89/52/360_F_314895284_4Fc8f6bMMtls1iG5vCClOQhYyEzM4xky.jpg"
+        backgroundImage="https://img.freepik.com/premium-photo/man-s-woman-s-fitness_257123-14155.jpg?w=996"
         hasVideo={false}
         onHover={true}
 
         mainHeading={ vitalityHaven.gymInfo.slogan }
       />
 
+      <CompaniesSection 
+        trustedCompanies={vitalityHaven.trustedCompanies}
+      />
 
+      <AboutSection 
+        title={"About Us"} 
+        subTitle={"Your Fitness Journey Starts Here"}
+        subText={vitalityHaven.gymInfo.description}
+        statistics={{
+          yearsInBusiness: vitalityHaven.gymInfo.gymStats.yearsInBusiness,
+          totalMembers: vitalityHaven.gymInfo.gymStats.members,
+          expertTrainers: vitalityHaven.gymInfo.gymStats.expertTrainers,
+          weeklyClasses: vitalityHaven.gymInfo.gymStats.weeklyClasses,
+          founded: vitalityHaven.gymInfo.gymStats.founded
+        }}
+        videoSource={"./src/assets/video/promotional-video.mp4"}
+      />
 
 
     </>
