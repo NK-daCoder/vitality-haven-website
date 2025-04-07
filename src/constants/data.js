@@ -20,6 +20,8 @@ import yogaGroup from "../assets/images/wallpaper/group-yoga.jpg"
 
 import gymCouple from "../assets/images/cutout/couple.png";
 import man from "../assets/images/cutout/man.png";
+import womenMidBody from "../assets/images/cutout/female-midbody-2.png";
+
 
 import vitalityHavenLogoWhite from "../assets/vitality-haven-logo.svg";
 import vitalityHavenLogoBlack from "../assets/vitality-haven-logo--black.svg";
@@ -54,7 +56,8 @@ const socialMediaIcons = [
 
 const cutOut = {
     gymCouple: gymCouple,
-    manPumpIron: man
+    manPumpIron: man,
+    womenBodyBuilder: womenMidBody,
 };
 
 

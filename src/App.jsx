@@ -1,7 +1,8 @@
 import React from 'react'
 import { socialMediaIcons, vitalityHaven, vitalityHavenLogo } from './constants/data';
 import { DesktopNavigation } from './Components/Navigation';
-import { AboutSection, CompaniesSection, HeroSection } from './Components/Sections';
+import { AboutSection, CompaniesSection, HeroSection, ServicesSection, WhyUsSection } from './Components/Sections';
+
 
 const App = () => {
   return (
@@ -26,7 +27,7 @@ const App = () => {
 
         secondaryLinks={[
           { text: "Contact", url: "", styles: "text-sm"},
-          { text: "Join Us", url: "", styles: "px-4 py-3 rounded-2xl font-semibold text-white bg-gradient-to-bl from-orange-500 to-orange-200 shadow-md"}
+          { text: "Join Us", url: "", styles: "px-4 py-3 rounded-[20px] font-semibold text-white bg-gradient-to-br from-orange-400 via-orange-300 to-orange-400 shadow-[0_8px_0px_-3px_rgba(0,0,0,0.1),inset_0_-5px_0px_-3px_rgba(0,0,0,0.1),inset_0_5px_0px_-3px_rgba(255,255,255,0.2)] hover:translate-y-1 hover:shadow-[0_4px_0px_-3px_rgba(0,0,0,0.1)] active:translate-y-2 active:shadow-[0_2px_0px_-3px_rgba(0,0,0,0.1)] transition-all duration-100"}
         ]}
 
         elementOnHover={true}
@@ -61,9 +62,19 @@ const App = () => {
           founded: vitalityHaven.gymInfo.gymStats.founded
         }}
         videoSource={"./src/assets/video/promotional-video.mp4"}
+        style={"z-10"}
       />
 
+      <ServicesSection 
+        title={"Our Services"} 
+        subTitle={"unleash your potential: premium fitness services tailored for you"} 
+        subText={"At Vitality Haven. we offer personalized fitness services to help you reach your goals"} 
+        services={ vitalityHaven.services }
+      />
 
+      <WhyUsSection />
+
+      
     </>
   )
 }

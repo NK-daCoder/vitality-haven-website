@@ -2,7 +2,21 @@ import React, { useRef, useState } from 'react'
 import PropTypes from 'prop-types';
 import NumberIndicator from './NumberIndicator';
 import Statistics from './Statistics';
-import { vitalityHaven } from '../constants/data';
+import { cutOut, vitalityHaven } from '../constants/data';
+import { GalleryCard, OurServicesCard } from './Card';
+import GradientCircle from './GradientCircle';
+import Dropdown from './Dropdown';
+
+
+export const SectionComponent = ({ title, subTitle, subText, style }) => {
+  return (
+    <section className={'flex flex-col gap-6 justify-center' + {style}}>
+      <h2 className="text-sm text-orange-500 z-10">{title}</h2>
+      <h3 className='text-4xl uppercase font-bold text-white z-10'>{subTitle}</h3>
+      <p className='text-md text-white w-3/4 z-10'>{subText}</p>
+    </section>
+  )
+}
 
 const HeroSection = ({ ourMedias, mainHeading, subHeadingText, backgroundImage, video, hasVideo = true, onHover = true }) => {
   return (
@@ -99,7 +113,7 @@ const CompaniesSection = ({ trustedCompanies }) => {
               <img 
                 src={item.logo} 
                 alt={item.name} 
-                className="max-h-12 object-contain grayscale hover:grayscale-0 transition-all duration-300 hover:scale-110"
+                className="size-28 object-contain filter grayscale-0  transition-all duration-300 hover:scale-110"
               />
             </li>
           ))}
@@ -167,15 +181,17 @@ const AboutSection = ({ title, subTitle, subText, statistics, videoSource }) => 
   };
 
   return (
-    <section className="container mx-auto py-24">
+    <section className="container mx-auto py-24 relative">
       <article className="flex flex-col gap-6 justify-center h-full">
-        <h2 className="text-base text-orange-500">{title}</h2>
-        <h3 className='text-4xl uppercase font-bold text-white'>{subTitle}</h3>
-        <p className='text-xl text-white w-3/4'>{subText}</p>
+        <SectionComponent
+          title={title}
+          subTitile={subTitle}
+          subText={subText}
+        />
         <Statistics stats={statistics} />
         
         <div 
-          className="relative rounded-2xl overflow-hidden"
+          className="relative rounded-2xl overflow-hidden z-10 border-2 border-orange-600 mt-5"
           onTouchStart={handleDoubleTap}
           onMouseEnter={() => setShowControls(true)}
           onMouseLeave={() => setShowControls(false)}
@@ -184,7 +200,7 @@ const AboutSection = ({ title, subTitle, subText, statistics, videoSource }) => 
             ref={videoRef}
             onClick={togglePlay}
             onTimeUpdate={handleTimeUpdate}
-            className="w-full"
+            className="w-full z-10 "
             playsInline
           >
             <source src={videoSource} type="video/mp4" />
@@ -220,8 +236,68 @@ const AboutSection = ({ title, subTitle, subText, statistics, videoSource }) => 
           </div>
         </div>
       </article>
+
+      <GradientCircle size={"size-[90rem]"} position={"absolute top-0 left-5"}/>
     </section>
   );
 };
 
-export { HeroSection, CompaniesSection, AboutSection };
+const ServicesSection = ({ title, subTitle, subText, services }) => {
+  return (
+    <article className='container mx-auto flex flex-col items-center relative'>
+      <SectionComponent 
+        title={title}
+        subTitle={subTitle}
+        subText={subText}
+      />
+      <section className='mt-4 w-full'>
+        <ul className='grid grid-cols-3 gap-2 overflow-hidden'>
+          <OurServicesCard object={services} />
+        </ul>
+      </section>
+
+   
+    </article>
+  )
+}
+
+const WhyUsSection = () => {
+  return (
+    <article className='container mx-auto py-24 relative '>
+      <SectionComponent 
+        title={"Preferences"} 
+        subTitle={"Why Choose Us For Your Fitness Journey"} 
+        subText={"takeing care af your fitness"}
+      />
+      <section className='grid grid-cols-2 gap-5'>
+        <GalleryCard 
+          primaryImage={cutOut.gymCouple} 
+          secondaryImage={cutOut.manPumpIron} 
+          thirdImage={cutOut.womenBodyBuilder}
+        />
+        <ul className='flex flex-col gap-3'>
+          <Dropdown 
+            dropdownTitle={"Learn More"} 
+            content={"fhiedhwihfehgwgfgvdvshgvchgdvsghvcdhgvscgvscvhsgvcsdjvcsdhcvdghvshcvdgvjh"}
+          />
+          <Dropdown 
+            dropdownTitle={"Learn More"} 
+            content={"fhiedhwihfehgwgfgvdvshgvchgdvsghvcdhgvscgvscvhsgvcsdjvcsdhcvdghvshcvdgvjh"}
+          />
+        </ul>
+      </section>
+
+      <GradientCircle 
+        size={"size-[50rem]"} 
+        position={"absolute -top-10 left-0"}
+      />
+      <GradientCircle 
+        size={"size-[15rem]"} 
+        position={"absolute bottom-0 right-0"}
+      />
+    </article>
+  );
+}
+
+
+export { HeroSection, CompaniesSection, AboutSection, ServicesSection, WhyUsSection };

@@ -1,0 +1,27 @@
+:root {
+    --card-saturation: 70%;
+    --button-saturation: 25%;
+}
+
+
+.circular-gradient {
+    background: rgb(255,149,0);
+    background: radial-gradient(circle, #ff5900c8 0%, #ffffff00 65%);
+}
+
+
+.card {
+    backdrop-filter: blur(50px) saturate(var(--card-saturation));
+    -webkit-backdrop-filter: blur(50px) saturate(var(--card-saturation));
+    background-color: rgba(255, 77, 0, 0.1);
+    border-radius: 12px;
+    border: 1px solid rgba(255, 98, 0, 0.549);
+}
+
+.button-gradient {
+    backdrop-filter: blur(16px) saturate(var(--button-saturation));
+    -webkit-backdrop-filter: blur(16px) saturate(var(--button-saturation));
+    background-color: rgba(17, 25, 40, 0.171);
+    border-radius: 12px;
+    border: 1px solid rgba(255, 89, 0, 0.685);
+}
