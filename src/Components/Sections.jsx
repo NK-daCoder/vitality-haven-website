@@ -1,16 +1,16 @@
-import React, { useRef, useState } from 'react'
+import { useState, useEffect, useRef } from 'react';
 import PropTypes from 'prop-types';
 import NumberIndicator from './NumberIndicator';
 import Statistics from './Statistics';
 import { cutOut, vitalityHaven } from '../constants/data';
-import { GalleryCard, OurServicesCard } from './Card';
+import { GalleryCard, OurServicesCard, TestamonialCard } from './Card';
 import GradientCircle from './GradientCircle';
 import Dropdown from './Dropdown';
 
 
 export const SectionComponent = ({ title, subTitle, subText, style }) => {
   return (
-    <section className={'flex flex-col gap-6 justify-center' + {style}}>
+    <section className={`flex flex-col gap-6 justify-center ${style}`}>
       <h2 className="text-sm text-orange-500 z-10">{title}</h2>
       <h3 className='text-4xl uppercase font-bold text-white z-10'>{subTitle}</h3>
       <p className='text-md text-white w-3/4 z-10'>{subText}</p>
@@ -269,20 +269,20 @@ const WhyUsSection = () => {
         subTitle={"Why Choose Us For Your Fitness Journey"} 
         subText={"takeing care af your fitness"}
       />
-      <section className='grid grid-cols-2 gap-5'>
+      <section className='grid grid-cols-2 gap-5 justify-items-center'>
         <GalleryCard 
           primaryImage={cutOut.gymCouple} 
           secondaryImage={cutOut.manPumpIron} 
           thirdImage={cutOut.womenBodyBuilder}
         />
-        <ul className='flex flex-col gap-3'>
+        <ul className='flex flex-col gap-3 justify-center items-center'>
           <Dropdown 
             dropdownTitle={"Learn More"} 
             content={"fhiedhwihfehgwgfgvdvshgvchgdvsghvcdhgvscgvscvhsgvcsdjvcsdhcvdghvshcvdgvjh"}
           />
           <Dropdown 
             dropdownTitle={"Learn More"} 
-            content={"fhiedhwihfehgwgfgvdvshgvchgdvsghvcdhgvscgvscvhsgvcsdjvcsdhcvdghvshcvdgvjh"}
+            content={"fhiedhwihfehgwgfgvdvshgvchgdvsghvcdhgvscgvscvhsgvcsdjvcsdhcvdghvshcvdgvjhfgewgfgyewgfyuewgygwfgewgfywgfuygfgfyewgduygwuydguwgduegduygwydguyegugywudygewugydw"}
           />
         </ul>
       </section>
@@ -299,5 +299,117 @@ const WhyUsSection = () => {
   );
 }
 
+const TestimonialsSection = ({ title, subTitle, subText, data }) => {
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [isPaused, setIsPaused] = useState(false);
+  const carouselRef = useRef(null);
+  const intervalRef = useRef(null);
 
-export { HeroSection, CompaniesSection, AboutSection, ServicesSection, WhyUsSection };
+  // Auto-advance carousel
+  useEffect(() => {
+    if (!isPaused) {
+      intervalRef.current = setInterval(() => {
+        setCurrentIndex(prev => (prev + 1) % data.length);
+      }, 5000); // Change slide every 5 seconds
+    }
+    return () => clearInterval(intervalRef.current);
+  }, [data.length, isPaused]);
+
+  const goToSlide = (index) => {
+    setCurrentIndex(index);
+    resetInterval();
+  };
+
+  const goToPrev = () => {
+    setCurrentIndex(prev => (prev - 1 + data.length) % data.length);
+    resetInterval();
+  };
+
+  const goToNext = () => {
+    setCurrentIndex(prev => (prev + 1) % data.length);
+    resetInterval();
+  };
+
+  const resetInterval = () => {
+    clearInterval(intervalRef.current);
+    intervalRef.current = setInterval(() => {
+      setCurrentIndex(prev => (prev + 1) % data.length);
+    }, 5000);
+  };
+
+  return (
+    <article className='relative container mx-auto py-28 overflow-hidden '>
+      <SectionComponent 
+        title={title} 
+        subTitle={subTitle}
+        subText={subText}
+      />
+      
+      <div 
+        className="relative w-full z-20"
+        onMouseEnter={() => setIsPaused(true)}
+        onMouseLeave={() => setIsPaused(false)}
+      >
+        {/* Carousel container */}
+        <div 
+          ref={carouselRef}
+          className="flex transition-transform duration-500 ease-in-out"
+          style={{ transform: `translateX(-${currentIndex * 100}%)` }}
+        >
+          {data.map((item, index) => (
+            <div key={`testimonial-${index}`} className="w-full flex-shrink-0 px-4">
+              <TestamonialCard 
+                testamonialDataImage={item.testamonialDataImage} 
+                testamonialDataName={item.testamonialDataName}
+                testamonial={item.testamonial}
+                socialMedia={item.socialMedia} 
+                ratings={item.ratings}
+              />
+            </div>
+          ))}
+        </div>
+
+        {/* Navigation arrows */}
+        <button 
+          onClick={goToPrev}
+          className="absolute left-0 top-1/2 -translate-y-1/2 z-10 bg-black/30 text-white p-2 rounded-full hover:bg-black/50 transition"
+          aria-label="Previous testimonial"
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+          </svg>
+        </button>
+        
+        <button 
+          onClick={goToNext}
+          className="absolute right-0 top-1/2 -translate-y-1/2 z-10 bg-black/30 text-white p-2 rounded-full hover:bg-black/50 transition"
+          aria-label="Next testimonial"
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+          </svg>
+        </button>
+      </div>
+
+      {/* Indicators */}
+      <div className="flex justify-center mt-8 space-x-2 z-10">
+        {data.map((_, index) => (
+          <button
+            key={`indicator-${index}`}
+            onClick={() => goToSlide(index)}
+            className={`w-3 h-3 rounded-full ${currentIndex === index ? 'bg-orange-500' : 'bg-gray-300'}`}
+            aria-label={`Go to testimonial ${index + 1}`}
+          />
+        ))}
+      </div>
+
+      <GradientCircle 
+        size={"size-[50rem]"} 
+        position={"absolute bottom-0 left-0 z-[1rem]"}
+      />
+    </article>
+  );
+};
+
+
+export { HeroSection, CompaniesSection, AboutSection, ServicesSection, WhyUsSection, TestimonialsSection };

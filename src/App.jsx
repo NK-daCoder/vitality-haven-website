@@ -1,7 +1,7 @@
 import React from 'react'
 import { socialMediaIcons, vitalityHaven, vitalityHavenLogo } from './constants/data';
 import { DesktopNavigation } from './Components/Navigation';
-import { AboutSection, CompaniesSection, HeroSection, ServicesSection, WhyUsSection } from './Components/Sections';
+import { AboutSection, CompaniesSection, HeroSection, ServicesSection, TestimonialsSection, WhyUsSection } from './Components/Sections';
 
 
 const App = () => {
@@ -74,6 +74,12 @@ const App = () => {
 
       <WhyUsSection />
 
+      <TestimonialsSection 
+        title={"Testamonials"} 
+        subTitle={"Don't take our world for it: believe the people"}
+        subText={"Our people are our proud treasure"}
+        data={ vitalityHaven.testimonials }
+      />
       
     </>
   )

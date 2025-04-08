@@ -25,6 +25,7 @@ import womenMidBody from "../assets/images/cutout/female-midbody-2.png";
 
 import vitalityHavenLogoWhite from "../assets/vitality-haven-logo.svg";
 import vitalityHavenLogoBlack from "../assets/vitality-haven-logo--black.svg";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const vitalityHavenLogo = {
     mainLogoWhite: vitalityHavenLogoWhite,
@@ -795,20 +796,277 @@ const vitalityHaven = {
     // Testimonials
     testimonials: [
       {
-        name: "Alex R.",
-        membership: "Peak Performance",
-        quote: "Vitality Haven completely changed my relationship with fitness. The community here makes every workout feel like an event rather than a chore!",
-        rating: 5,
-        date: "2023-11-15"
+        testamonialDataImage: "https://randomuser.me/api/portraits/men/32.jpg",
+        testamonialDataName: "Alex R. (Corporate Executive)",
+        testamonial: "After 15 years at a desk job, my back pain was unbearable. Vitality Haven's 'Desk-to-Fit' program changed everything - posture correction, stress-relief workouts, and ergonomic advice. In 6 months, I lost 28lbs and eliminated chronic pain. Now I lead our company's wellness initiative!",
+        socialMedia: [
+          { url: "https://twitter.com", icon: "twitter" },
+          { url: "https://instagram.com", icon: "instagram" }
+        ],
+        ratings: 5,
+        date: "2023-11-15",
+        program: "Executive Wellness Package"
       },
       {
-        name: "Priya K.",
-        membership: "Total Transformation",
-        quote: "After trying 3 other gyms, I finally found my fitness home. The trainers genuinely care about your progress and the facilities are immaculate.",
-        rating: 5,
-        date: "2023-10-28"
+        testamonialDataImage: "https://randomuser.me/api/portraits/women/44.jpg",
+        testamonialDataName: "Priya K. (New Mom)",
+        testamonial: "Postpartum depression hit hard after my twins were born. The 'MomStrong' program gave me back my strength - both physically and mentally. The nursery let me focus on workouts, while the mom's support group became my lifeline. From C-section recovery to running 5Ks with my stroller!",
+        socialMedia: [
+          { url: "https://facebook.com", icon: "facebook" }
+        ],
+        ratings: 5,
+        date: "2023-10-28",
+        program: "Postnatal Fitness Program"
       },
-      // ... more testimonials
+      {
+        testamonialDataImage: "https://randomuser.me/api/portraits/men/75.jpg",
+        testamonialDataName: "Marcus T. (Diabetes Prevention)",
+        testamonial: "My doctor's warning about prediabetes scared me straight. The medical team created a customized plan - gentle strength training for my arthritis combined with nutrition coaching. Not only did I lose 25lbs, but my A1C dropped to normal levels. The diabetes prevention cooking classes were game-changers!",
+        socialMedia: [
+          { url: "https://linkedin.com", icon: "linkedin" }
+        ],
+        ratings: 4.5,
+        date: "2023-12-05",
+        program: "Metabolic Reset Program"
+      },
+      {
+        testamonialDataImage: "https://randomuser.me/api/portraits/women/63.jpg",
+        testamonialDataName: "Jamie L. (Retiree)",
+        testamonial: "At 68, I thought my active days were over. The senior specialists modified everything for my osteoporosis and knee replacements. The pool therapy let me move pain-free, and now I'm in the over-60s dance troupe! My grandkids can't keep up with me anymore.",
+        socialMedia: [],
+        ratings: 5,
+        date: "2023-09-22",
+        program: "Golden Vitality Senior Fitness"
+      },
+      {
+        testamonialDataImage: "https://randomuser.me/api/portraits/men/19.jpg",
+        testamonialDataName: "Carlos M. (Night Shift Nurse)",
+        testamonial: "Working ER nights destroyed my health. The 24/7 access meant I could workout at 4am after shifts. Trainer Sarah designed a 'circadian rhythm' program that actually helped me sleep better. The overnight smoothie bar became my recovery station!",
+        socialMedia: [
+          { url: "https://twitter.com", icon: "twitter" },
+          { url: "https://instagram.com", icon: "instagram" },
+          { url: "https://youtube.com", icon: "youtube" }
+        ],
+        ratings: 4,
+        date: "2023-11-30",
+        program: "Night Owl Fitness Plan"
+      },
+      {
+        testamonialDataImage: "https://randomuser.me/api/portraits/women/28.jpg",
+        testamonialDataName: "Nia W. (Anxiety Warrior)",
+        testamonial: "My panic attacks kept me from leaving home. The 'Mindful Movement' program combined therapy techniques with exercise. The sensory-friendly hours and trauma-informed trainers made me feel safe. Now I'm not just managing anxiety - I'm training for my first 5K!",
+        socialMedia: [
+          { url: "https://tiktok.com", icon: "tiktok" }
+        ],
+        ratings: 5,
+        date: "2023-10-15",
+        program: "Mental Health Movement"
+      },
+      {
+        testamonialDataImage: "https://randomuser.me/api/portraits/men/42.jpg",
+        testamonialDataName: "Ethan P. (College Athlete)",
+        testamonial: "Tore my ACL during basketball season. The sports rehab team worked with my college trainers to create a recovery plan. Their anti-gravity treadmill and cryotherapy got me back on court 2 months early - just in time for playoffs!",
+        socialMedia: [
+          { url: "https://twitter.com", icon: "twitter" }
+        ],
+        ratings: 4.5,
+        date: "2023-12-18",
+        program: "Elite Sports Rehab"
+      },
+      {
+        testamonialDataImage: "https://randomuser.me/api/portraits/women/51.jpg",
+        testamonialDataName: "Sophia C. (Working Mom of 3)",
+        testamonial: "Between Zoom calls and diaper changes, I'd given up on myself. The '30-Minute Power Parent' program fits into naptimes, and the kids BEG to go to the childcare center. The nutritionist's '5-minute meal' system saved our family's health. Down 40lbs and finally have energy again!",
+        socialMedia: [
+          { url: "https://instagram.com", icon: "instagram" }
+        ],
+        ratings: 5,
+        date: "2023-11-02",
+        program: "Time-Crunched Parent Plan"
+      },
+      {
+        testamonialDataImage: "https://randomuser.me/api/portraits/men/67.jpg",
+        testamonialDataName: "Derek H. (Former Couch Potato)",
+        testamonial: "At 320lbs, I could barely walk up stairs. Trainer Jamal started with chair exercises and celebrated every small victory. The 'No Judgment Zone' philosophy kept me coming back. 18 months later, I've run three 10Ks and became a certified nutrition coach!",
+        socialMedia: [],
+        ratings: 5,
+        date: "2023-09-10",
+        program: "Beginner Transformation"
+      },
+      {
+        testamonialDataImage: "https://randomuser.me/api/portraits/women/37.jpg",
+        testamonialDataName: "Lena K. (Cancer Survivor)",
+        testamonial: "After chemo, I could barely lift my arms. The oncology rehab specialists rebuilt my strength gradually - starting with breathing exercises. The infrared sauna helped with nerve pain, and the survivor's yoga class gave me hope. Now I lead the monthly 'Thrivers' support group!",
+        socialMedia: [
+          { url: "https://facebook.com", icon: "facebook" },
+          { url: "https://instagram.com", icon: "instagram" }
+        ],
+        ratings: 4,
+        date: "2023-10-05",
+        program: "Post-Treatment Rebuild"
+      },
+      {
+        testamonialDataImage: "https://randomuser.me/api/portraits/men/88.jpg",
+        testamonialDataName: "Tyler G. (Tech Entrepreneur)",
+        testamonial: "The 90-Day CEO Challenge saved my health and business. Morning 'Power Hour' combines workout, meditation, and planning. The executive chef's meal prep service saved 10+ hours weekly. My company's growth tripled as my waistline shrank!",
+        socialMedia: [
+          { url: "https://twitter.com", icon: "twitter" }
+        ],
+        ratings: 5,
+        date: "2023-12-22",
+        program: "High-Performance CEO"
+      },
+      {
+        testamonialDataImage: "https://randomuser.me/api/portraits/women/92.jpg",
+        testamonialDataName: "Maya S. (College Student)",
+        testamonial: "The student membership made fitness affordable. The 'Study Break' workouts boosted my focus better than caffeine! The nutritionist taught me dorm-room meal prep that cured my 'freshman 15'. Now I'm president of our campus wellness club.",
+        socialMedia: [
+          { url: "https://instagram.com", icon: "instagram" }
+        ],
+        ratings: 5,
+        date: "2023-11-19",
+        program: "Campus Vitality Plan"
+      },
+      {
+        testamonialDataImage: "https://randomuser.me/api/portraits/men/15.jpg",
+        testamonialDataName: "Omar J. (Retired Vet)",
+        testamonial: "Service injuries left me with chronic pain. The adaptive fitness program uses techniques from VA rehab hospitals. The veteran's meetups gave me camaraderie I'd missed since discharge. From wheelchair to walking 5 miles daily!",
+        socialMedia: [],
+        ratings: 4.5,
+        date: "2023-10-30",
+        program: "Heroes Fitness Initiative"
+      },
+      {
+        testamonialDataImage: "https://randomuser.me/api/portraits/women/24.jpg",
+        testamonialDataName: "Elena V. (Yoga Teacher)",
+        testamonial: "Vitality Haven's teacher training elevated my practice beyond the physical. The anatomy modules helped me safely guide students with injuries. Their trauma-informed approach transformed how I teach. Now I lead classes here and mentor new instructors!",
+        socialMedia: [
+          { url: "https://youtube.com", icon: "youtube" }
+        ],
+        ratings: 5,
+        date: "2023-09-15",
+        program: "Advanced Yoga Certification"
+      },
+      {
+        testamonialDataImage: "https://randomuser.me/api/portraits/men/53.jpg",
+        testamonialDataName: "Kyle B. (Data Scientist)",
+        testamonial: "The app's biometric tracking satisfies my analytics brain! The AI trainer adjusts my program based on sleep/stress data. Joined the 'Quantified Self' group where we optimize workouts like code. PR'd all my lifts while reducing injury risk by 62%!",
+        socialMedia: [
+          { url: "https://twitter.com", icon: "twitter" },
+          { url: "https://linkedin.com", icon: "linkedin" }
+        ],
+        ratings: 4,
+        date: "2023-12-10",
+        program: "Biohacker Elite"
+      },
+      {
+        testamonialDataImage: "https://randomuser.me/api/portraits/women/76.jpg",
+        testamonialDataName: "Aisha N. (Breast Cancer Survivor)",
+        testamonial: "After double mastectomy, I feared I'd never regain strength. The women's rehab program rebuilt my confidence along with my body. The lymphedema massage therapy was life-changing. Now I lead 'Strength After Surgery' workshops!",
+        socialMedia: [
+          { url: "https://instagram.com", icon: "instagram" }
+        ],
+        ratings: 5,
+        date: "2023-11-25",
+        program: "Recovery Warriors"
+      },
+      {
+        testamonialDataImage: "https://randomuser.me/api/portraits/men/29.jpg",
+        testamonialDataName: "Daniel F. (Powerlifter)",
+        testamonial: "Plateaued for 2 years until joining Vitality's strength lab. The force plate analysis revealed imbalances I never noticed. Their Westside Barbell programming took my deadlift from 505 to 585 in 6 months! The strongman crew pushes me like family.",
+        socialMedia: [],
+        ratings: 4.5,
+        date: "2023-10-12",
+        program: "Elite Powerlifting"
+      },
+      {
+        testamonialDataImage: "https://randomuser.me/api/portraits/women/81.jpg",
+        testamonialDataName: "Rachel M. (Bride-to-Be)",
+        testamonial: "The 'Wedding Ready' program delivered more than I hoped - not just weight loss but radiant health. The bridal bootcamp group kept me motivated, and the nutritionist's 'stress eating' strategies saved me during planning. Felt amazing in my dress AND had energy to dance all night!",
+        socialMedia: [
+          { url: "https://facebook.com", icon: "facebook" },
+          { url: "https://instagram.com", icon: "instagram" }
+        ],
+        ratings: 5,
+        date: "2023-09-28",
+        program: "Bridal Transformation"
+      },
+      {
+        testamonialDataImage: "https://randomuser.me/api/portraits/men/64.jpg",
+        testamonialDataName: "Samuel T. (Firefighter)",
+        testamonial: "The tactical fitness program mimics real fireground demands. The heat acclimation chamber prepared me better than any drill. After 6 months, my air tank lasts 25% longer on calls. Our whole station joined after seeing my results!",
+        socialMedia: [
+          { url: "https://twitter.com", icon: "twitter" }
+        ],
+        ratings: 4,
+        date: "2023-12-15",
+        program: "First Responder Fitness"
+      },
+      {
+        testamonialDataImage: "https://randomuser.me/api/portraits/women/33.jpg",
+        testamonialDataName: "Isabella G. (Flight Attendant)",
+        testamonial: "Constant travel wrecked my routine. The global membership lets me use top facilities worldwide. The 'Jet Lag Reset' program helps with time zones, and the travel-friendly workouts need no equipment. Finally consistent despite my crazy schedule!",
+        socialMedia: [
+          { url: "https://instagram.com", icon: "instagram" }
+        ],
+        ratings: 5,
+        date: "2023-11-08",
+        program: "Road Warrior Wellness"
+      },
+      {
+        testamonialDataImage: "https://randomuser.me/api/portraits/men/47.jpg",
+        testamonialDataName: "Nathan W. (Marathoner)",
+        testamonial: "The endurance lab's VO2 max testing revealed inefficient breathing patterns. Their running form analysis shaved 3 minutes off my mile. The cryotherapy lets me train harder without joint pain. Qualified for Boston at 45!",
+        socialMedia: [],
+        ratings: 5,
+        date: "2023-10-20",
+        program: "Peak Endurance"
+      },
+      {
+        testamonialDataImage: "https://randomuser.me/api/portraits/women/59.jpg",
+        testamonialDataName: "Olivia P. (Physical Therapist)",
+        testamonial: "As a PT, I'm blown by Vitality's preventative approach. The movement screens catch issues before they become injuries. I now refer patients here for prehab - their recovery times have improved dramatically!",
+        socialMedia: [
+          { url: "https://linkedin.com", icon: "linkedin" }
+        ],
+        ratings: 4.5,
+        date: "2023-09-05",
+        program: "Medical Professional Partnership"
+      },
+      {
+        testamonialDataImage: "https://randomuser.me/api/portraits/men/71.jpg",
+        testamonialDataName: "Victor L. (Strength Coach)",
+        testamonial: "The strongman certification elevated my coaching. Learning to implement atlas stones and yoke walks safely transformed my athletes' functional strength. The continuing education here keeps me at the cutting edge!",
+        socialMedia: [
+          { url: "https://youtube.com", icon: "youtube" }
+        ],
+        ratings: 5,
+        date: "2023-12-28",
+        program: "Coaches Development"
+      },
+      {
+        testamonialDataImage: "https://randomuser.me/api/portraits/women/42.jpg",
+        testamonialDataName: "Hannah R. (Expectant Mother)",
+        testamonial: "The prenatal program adjusted perfectly through each trimester. The pelvic floor specialists prevented common pregnancy pains. Even at 8 months, I felt strong and mobile thanks to my modified workouts!",
+        socialMedia: [
+          { url: "https://instagram.com", icon: "instagram" }
+        ],
+        ratings: 5,
+        date: "2023-11-12",
+        program: "Pregnancy Fitness"
+      },
+      {
+        testamonialDataImage: "https://randomuser.me/api/portraits/men/22.jpg",
+        testamonialDataName: "Jordan K. (Gym Owner)",
+        testamonial: "After 10 years in the industry, Vitality Haven still impresses me. The staff training programs are revolutionary. I've implemented their member retention systems - our churn rate dropped 40% in 3 months!",
+        socialMedia: [
+          { url: "https://twitter.com", icon: "twitter" },
+          { url: "https://instagram.com", icon: "instagram" }
+        ],
+        ratings: 5,
+        date: "2023-10-08",
+        program: "Gym Owner Mastermind"
+      }
     ],
   
     // Special Programs
