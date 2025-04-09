@@ -1,7 +1,7 @@
 import React from 'react'
 import { socialMediaIcons, vitalityHaven, vitalityHavenLogo } from './constants/data';
 import { DesktopNavigation } from './Components/Navigation';
-import { AboutSection, CompaniesSection, HeroSection, ServicesSection, TestimonialsSection, WhyUsSection } from './Components/Sections';
+import { AboutSection, CompaniesSection, HeroSection, LocationSection, OurPlans, ServicesSection, TestimonialsSection, WhyUsSection } from './Components/Sections';
 
 
 const App = () => {
@@ -75,10 +75,39 @@ const App = () => {
       <WhyUsSection />
 
       <TestimonialsSection 
-        title={"Testamonials"} 
-        subTitle={"Don't take our world for it: believe the people"}
-        subText={"Our people are our proud treasure"}
+        title={"Real Transformations, Real Stories"} 
+        subTitle={
+          "Join Thousands Who Found Their Strength at Vitality Haven"
+        }
+        subText={
+          `From executives rebuilding their health after decades at a desk to new moms regaining 
+          their strength, from cancer survivors reclaiming mobility to athletes breaking through 
+          plateaus our members’ journeys inspire us every day. With 24/7 access for night shift 
+          workers, medical-grade rehab programs, and specialized training for every life stage, we 
+          don’t just change bodies we change lives. See how our award-winning trainers, science-backed
+           programs, and supportive community help people surpass their limits. Whether you’re 
+           recovering from injury, preparing for a marathon, or taking your first fitness steps, 
+           your transformation starts here.`
+        }
         data={ vitalityHaven.testimonials }
+      />
+
+      <OurPlans 
+        title={"Membership Options"} 
+        subTitle={"Elevate Your Fitness Journey"} 
+        subText={
+          "Choose the perfect plan to match your goals and lifestyle. " +
+          "All memberships include access to our world-class facilities, " +
+          "expert trainers, and a supportive community to keep you motivated."
+        } 
+        priceData={vitalityHaven.membershipPlans}
+      />
+
+      <LocationSection 
+        title={"Our Location"} 
+        subTitle={"Our Global Presence: Fitness Centers Around The World"} 
+        subText={"No matter where you are our gyms are here to help you reach your fitness goals. With location across the globe. findig a gym near you is easy. Explore our map and join our wold wide community Today."} 
+        numberOfLocations={ vitalityHaven.gymInfo.gymStats.locations.length }
       />
       
     </>

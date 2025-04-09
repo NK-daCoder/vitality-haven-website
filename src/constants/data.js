@@ -88,35 +88,309 @@ const vitalityHaven = {
         // calculated based on the number of classes per day 
         weeklyClasses: 60, 
         locations: [
-            {
+          // United States
+          {
             id: 1,
-            name: "Downtown Oasis",
-            address: "123 Wellness Way, Metropolis, NY 10001",
-            phone: "(555) 123-4567",
+            name: "Manhattan Flagship",
+            address: "200 Hudson Yards, New York, NY 10001",
+            phone: "(212) 555-7890",
             hours: {
-                weekdays: "5:00 AM - 11:00 PM",
-                weekends: "7:00 AM - 9:00 PM"
+              weekdays: "4:30 AM - 12:00 AM",
+              weekends: "6:00 AM - 10:00 PM"
             },
-            amenities: ["Indoor Pool", "Sauna", "Juice Bar", "Childcare"]
-            },
-            {
+            amenities: ["Olympic Pool", "Luxury Spa", "Executive Lounge", "Basketball Court"]
+          },
+          {
             id: 2,
-            name: "Uptown Retreat",
-            address: "456 Tranquility Trail, Metropolis, NY 10010",
-            phone: "(555) 987-6543",
+            name: "Venice Beach Wellness",
+            address: "1 Muscle Beach Way, Los Angeles, CA 90291",
+            phone: "(310) 555-2345",
             hours: {
-                weekdays: "6:00 AM - 10:00 PM",
-                weekends: "8:00 AM - 8:00 PM"
+              weekdays: "5:00 AM - 11:00 PM",
+              weekends: "6:00 AM - 9:00 PM"
             },
-            amenities: ["Rooftop Yoga Deck", "Cryotherapy", "Smoothie Bar", "Physical Therapy"]
-            }
+            amenities: ["Outdoor Training Deck", "Beach Access", "Cold Plunge Pools", "Surfboard Storage"]
+          },
+          {
+            id: 3,
+            name: "Chicago Lakeside",
+            address: "300 N Harbor Dr, Chicago, IL 60601",
+            phone: "(312) 555-6789",
+            hours: {
+              weekdays: "5:00 AM - 11:00 PM",
+              weekends: "7:00 AM - 9:00 PM"
+            },
+            amenities: ["Indoor Track", "Regeneration Lounge", "Physical Therapy", "Winter Training Zone"]
+          },
+        
+          // South Africa
+          {
+            id: 4,
+            name: "Cape Town Waterfront",
+            address: "Victoria & Alfred Waterfront, Cape Town 8001",
+            phone: "+27 21 555 1234",
+            hours: {
+              weekdays: "5:30 AM - 10:00 PM",
+              weekends: "7:00 AM - 8:00 PM"
+            },
+            amenities: ["Table View Yoga Deck", "Altitude Training Room", "Boutique Cafe", "Massage Therapy"]
+          },
+          {
+            id: 5,
+            name: "Johannesburg Sandton",
+            address: "Nelson Mandela Square, Sandton, Johannesburg 2196",
+            phone: "+27 11 555 5678",
+            hours: {
+              weekdays: "5:00 AM - 10:30 PM",
+              weekends: "7:00 AM - 8:30 PM"
+            },
+            amenities: ["Executive Wellness Center", "24/7 Private Training", "Nutrition Clinic", "Sleep Pods"]
+          },
+        
+          // Asia
+          {
+            id: 6,
+            name: "Singapore Marina Bay",
+            address: "10 Bayfront Ave, Singapore 018956",
+            phone: "+65 6555 8888",
+            hours: {
+              weekdays: "6:00 AM - 11:00 PM",
+              weekends: "7:00 AM - 10:00 PM"
+            },
+            amenities: ["Infinity Pool", "Sky Garden Training", "TCM Wellness Center", "Digital Fitness Lab"]
+          },
+          {
+            id: 7,
+            name: "Tokyo Roppongi",
+            address: "6-10-1 Roppongi, Minato City, Tokyo 106-0032",
+            phone: "+81 3-5555-1212",
+            hours: {
+              weekdays: "5:00 AM - 12:00 AM",
+              weekends: "6:00 AM - 10:00 PM"
+            },
+            amenities: ["Onsen Recovery Center", "Robot Training Assistants", "Kaiseki Nutrition Bar", "Sleep Optimization Pods"]
+          },
+        
+          // Additional US Locations
+          {
+            id: 8,
+            name: "Miami Beach Club",
+            address: "1 Ocean Dr, Miami Beach, FL 33139",
+            phone: "(305) 555-3456",
+            hours: {
+              weekdays: "5:00 AM - 11:00 PM",
+              weekends: "6:00 AM - 10:00 PM"
+            },
+            amenities: ["Beachfront Training", "Saltwater Pool", "Cryotherapy", "Vitamin IV Bar"]
+          },
+          {
+            id: 9,
+            name: "Austin Tech District",
+            address: "500 Congress Ave, Austin, TX 78701",
+            phone: "(512) 555-7890",
+            hours: {
+              weekdays: "5:00 AM - 11:00 PM",
+              weekends: "7:00 AM - 9:00 PM"
+            },
+            amenities: ["Biohacking Lab", "Outdoor Climbing Wall", "Recovery Lounge", "Tech-Free Zen Garden"]
+          },
+        
+          // Additional Asian Locations
+          {
+            id: 10,
+            name: "Hong Kong Central",
+            address: "88 Queensway, Central, Hong Kong",
+            phone: "+852 5555 6789",
+            hours: {
+              weekdays: "6:00 AM - 12:00 AM",
+              weekends: "7:00 AM - 10:00 PM"
+            },
+            amenities: ["Sky High Cycling Studio", "TCM Herbal Sauna", "Financial District Express Classes", "24/7 Executive Access"]
+          },
+          {
+            id: 11,
+            name: "Bangkok Sukhumvit",
+            address: "999 Sukhumvit Road, Bangkok 10110",
+            phone: "+66 2 555 1234",
+            hours: {
+              weekdays: "5:00 AM - 11:00 PM",
+              weekends: "6:00 AM - 10:00 PM"
+            },
+            amenities: ["Muay Thai Training Center", "Thai Massage Studio", "Tropical Rooftop Yoga", "Detox Juice Bar"]
+          },
+        
+          // Additional South Africa Locations
+          {
+            id: 12,
+            name: "Durban Beachfront",
+            address: "1 Golden Mile, Durban 4001",
+            phone: "+27 31 555 9012",
+            hours: {
+              weekdays: "5:00 AM - 10:00 PM",
+              weekends: "6:00 AM - 8:00 PM"
+            },
+            amenities: ["Oceanview Training Deck", "Surf Fitness Program", "Braai Nutrition Cafe", "African Dance Studio"]
+          },
+          {
+            id: 13,
+            name: "Pretoria Executive",
+            address: "267 Francis Baard St, Pretoria 0002",
+            phone: "+27 12 555 3456",
+            hours: {
+              weekdays: "5:30 AM - 10:30 PM",
+              weekends: "7:00 AM - 8:00 PM"
+            },
+            amenities: ["Diplomatic District Access", "Private Training Suites", "Business Center", "High-Security Parking"]
+          },
+        
+          // More Asian Locations
+          {
+            id: 14,
+            name: "Seoul Gangnam",
+            address: "623 Teheran-ro, Gangnam-gu, Seoul 06173",
+            phone: "+82 2 555 7890",
+            hours: {
+              weekdays: "5:00 AM - 12:00 AM",
+              weekends: "6:00 AM - 10:00 PM"
+            },
+            amenities: ["K-Beauty Recovery Lounge", "E-Sports Performance Center", "Korean Spa Facilities", "Smart Mirror Training"]
+          },
+          {
+            id: 15,
+            name: "Shanghai Bund",
+            address: "88 The Bund, Shanghai 200002",
+            phone: "+86 21 5555 1234",
+            hours: {
+              weekdays: "6:00 AM - 11:00 PM",
+              weekends: "7:00 AM - 10:00 PM"
+            },
+            amenities: ["Huangpu River View Cycling", "Traditional Chinese Medicine Center", "Corporate Wellness Programs", "24/7 International Access"]
+          },
+        
+          // More US Locations
+          {
+            id: 16,
+            name: "Seattle Tech Haven",
+            address: "500 Union St, Seattle, WA 98101",
+            phone: "(206) 555-4567",
+            hours: {
+              weekdays: "5:00 AM - 11:00 PM",
+              weekends: "6:00 AM - 9:00 PM"
+            },
+            amenities: ["Rainforest-Themed Sauna", "Startup Founder Programs", "Standing Desk Work Area", "Northwest Organic Cafe"]
+          },
+          {
+            id: 17,
+            name: "Boston Historic",
+            address: "1 Financial Center, Boston, MA 02110",
+            phone: "(617) 555-8901",
+            hours: {
+              weekdays: "5:00 AM - 11:00 PM",
+              weekends: "6:00 AM - 9:00 PM"
+            },
+            amenities: ["Ivy League Sports Science Lab", "Revolutionary War-Themed Bootcamp", "Academic Discounts", "Nor'easter Recovery Lounge"]
+          },
+        
+          // More Asian Locations
+          {
+            id: 18,
+            name: "Mumbai Bandra",
+            address: "Bandra Kurla Complex, Mumbai 400051",
+            phone: "+91 22 5555 6789",
+            hours: {
+              weekdays: "5:30 AM - 11:30 PM",
+              weekends: "6:00 AM - 10:00 PM"
+            },
+            amenities: ["Bollywood Dance Studio", "Ayurvedic Wellness Center", "Cricket Performance Training", "Vegetarian Superfood Bar"]
+          },
+          {
+            id: 19,
+            name: "Taipei 101",
+            address: "45 Taipei 101, Xinyi District, Taipei 110",
+            phone: "+886 2 5555 1010",
+            hours: {
+              weekdays: "6:00 AM - 11:00 PM",
+              weekends: "7:00 AM - 10:00 PM"
+            },
+            amenities: ["Mountain View Yoga", "Night Market Nutrition Guides", "Bubble Tea Recovery Bar", "Earthquake-Proof Training Equipment"]
+          },
+        
+          // More South Africa Locations
+          {
+            id: 20,
+            name: "Stellenbosch Vineyard",
+            address: "1 Wellness Estate, Stellenbosch 7600",
+            phone: "+27 21 555 7890",
+            hours: {
+              weekdays: "6:00 AM - 9:00 PM",
+              weekends: "7:00 AM - 7:00 PM"
+            },
+            amenities: ["Vineyard Running Trails", "Wine Country Nutrition", "Harvest-Themed Workouts", "Luxury Spa Retreat"]
+          },
+          {
+            id: 21,
+            name: "Port Elizabeth Ocean",
+            address: "1 Marine Dr, Summerstrand, Gqeberha 6001",
+            phone: "+27 41 555 1234",
+            hours: {
+              weekdays: "5:00 AM - 10:00 PM",
+              weekends: "6:00 AM - 8:00 PM"
+            },
+            amenities: ["Dolphin View Cycling", "Marine-Themed Hydrotherapy", "Surf & Sand Training", "Seaside Meditation Deck"]
+          },
+        
+          // Additional Global Locations
+          {
+            id: 22,
+            name: "Dubai Marina",
+            address: "The Palm Tower, Dubai Marina, Dubai",
+            phone: "+971 4 555 1234",
+            hours: {
+              weekdays: "6:00 AM - 12:00 AM",
+              weekends: "7:00 AM - 11:00 PM"
+            },
+            amenities: ["Gold-Plated Recovery Lounge", "Desert Cooled Training Floor", "Luxury Changing Suites", "Private Beach Access"]
+          },
+          {
+            id: 23,
+            name: "Sydney Harbour",
+            address: "1 Circular Quay, Sydney NSW 2000",
+            phone: "+61 2 5555 6789",
+            hours: {
+              weekdays: "5:00 AM - 11:00 PM",
+              weekends: "6:00 AM - 10:00 PM"
+            },
+            amenities: ["Opera House View Yoga", "Bondi Beach Training Programs", "Outdoor Olympic Pool", "Aussie BBQ Nutrition Bar"]
+          },
+          {
+            id: 24,
+            name: "London Mayfair",
+            address: "100 Park Lane, London W1K 7TN",
+            phone: "+44 20 5555 1234",
+            hours: {
+              weekdays: "5:00 AM - 11:00 PM",
+              weekends: "6:00 AM - 10:00 PM"
+            },
+            amenities: ["Royal Training Protocols", "Afternoon Tea Recovery", "Fog-Proof Running Track", "Private Member's Club"]
+          },
+          {
+            id: 25,
+            name: "Rio de Janeiro Copacabana",
+            address: "Avenida Atlântica 4000, Rio de Janeiro 22070-001",
+            phone: "+55 21 5555-6789",
+            hours: {
+              weekdays: "5:00 AM - 11:00 PM",
+              weekends: "6:00 AM - 10:00 PM"
+            },
+            amenities: ["Beachfront Functional Training", "Samba Dance Cardio", "Carnival-Themed Classes", "Acai Superfood Bar"]
+          }
         ]
       }
     },
 
     trustedCompanies: [
         {
-            id: 1,
+            id: 1,  
             name: "equinox",
             logo: equinox
         },
@@ -602,7 +876,7 @@ const vitalityHaven = {
     // Membership Plans
     membershipPlans: [
       {
-        id: "basic",
+        id: "Basic",
         name: "Essential Vitality",
         price: 49.99,
         period: "month",
@@ -615,7 +889,7 @@ const vitalityHaven = {
         bestSeller: false
       },
       {
-        id: "premium",
+        id: "Premium",
         name: "Peak Performance",
         price: 89.99,
         period: "month",
@@ -629,7 +903,7 @@ const vitalityHaven = {
         bestSeller: true
       },
       {
-        id: "elite",
+        id: "Elite",
         name: "Total Transformation",
         price: 149.99,
         period: "month",

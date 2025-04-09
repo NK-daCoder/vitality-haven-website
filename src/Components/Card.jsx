@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faStar, faStarHalfAlt } from '@fortawesome/free-solid-svg-icons';
+import { faArrowRight, faArrowTrendUp, faStar, faStarHalfAlt } from '@fortawesome/free-solid-svg-icons';
 import { faStar as faStarRegular } from '@fortawesome/free-regular-svg-icons';
 import { faFacebook, faInstagram, faLinkedin, faTiktok, faTwitter, faYoutube } from '@fortawesome/free-brands-svg-icons';
 
@@ -153,7 +153,7 @@ const TestamonialCard = ({
 
   return (
     <li className="button-gradient p-6 !rounded-3xl">
-      <article className="grid grid-cols-2 gap-4">
+      <article className="grid grid-cols-1 md:grid-cols-2 gap-4 items-center">
         <div className="relative">
           <img 
             src={testamonialDataImage} 
@@ -165,11 +165,11 @@ const TestamonialCard = ({
           </span>
         </div>
 
-        <section>
-          <h1 className="text-lg font-semibold text-white">{testamonialDataName}</h1>
-          <p className="text-orange-100 mt-2">{testamonial}</p>
+        <section className='flex flex-col justify-center h-full'>
+          <h1 className="text-2xl font-semibold text-white">{testamonialDataName}</h1>
+          <p className="text-orange-100 mt-2 text-sm">{testamonial}</p>
 
-          <section className='flex justify-between items-center'>
+          <section className='flex justify-between items-center mt-5'>
             <div className="flex gap-1">
               {typeof ratings === 'number' && renderStars()}
             </div>
@@ -196,5 +196,57 @@ const TestamonialCard = ({
   );
 };
 
+const PriceCard = ({ pricePlan, price, month, subText, list }) => {
+  return (
+    <li className="w-full max-w-sm mx-auto z-20">
+      <article className='price-card bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 flex flex-col h-full border border-gray-100'>
+        {/* Header Section */}
+        <section className='px-6 py-4 bg-gradient-to-tr from-orange-400 to-orange-500 shadow-lg'>
+          <h1 className=' text-white font-bold text-xl tracking-wide text-center'>{pricePlan}</h1>
+        </section>
+        
+        {/* Pricing Section */}
+        <section className='p-6 flex-grow'>
+          <div className='flex items-center mb-6'>
+            <h2 className='text-4xl font-extrabold text-white'>{price}</h2>
+            <p className='text-lg text-white ml-1 mb-1'>/{month}</p>
+          </div>
+          
+          <div>
+            <h3 className=' text-gray-200 mb-6'>{subText}</h3>
+            
+            <ul className='space-y-3 mb-8'>
+              {list.map((element, index) => (
+                <li key={index} className='flex items-start'>
+                  <span className='text-orange-500 mt-1 mr-2'>
+                    <FontAwesomeIcon icon={faArrowRight} size="xs" />
+                  </span>
+                  <p className='text-gray-400'>{element}</p>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </section>
+        
+        {/* CTA Section */}
+        <div className='px-6 pb-6'>
+          <button className='w-full py-3 px-4 bg-gradient-to-br from-orange-400 to-orange-600 text-white font-semibold rounded-lg transition-all duration-300 flex items-center justify-center 
+                            shadow-lg hover:shadow-xl
+                            border border-orange-300 border-opacity-50
+                            hover:from-orange-500 hover:to-orange-700
+                            active:scale-95
+                            backdrop-blur-sm
+                            hover:backdrop-blur'>
+            Get Started
+            <span className='ml-2'>
+              <FontAwesomeIcon icon={faArrowTrendUp} />
+            </span>
+          </button>
+        </div>
+      </article>
+    </li>
+  )
+}
 
-export { OurServicesCard, GalleryCard, TestamonialCard };
+
+export { OurServicesCard, GalleryCard, TestamonialCard, PriceCard };

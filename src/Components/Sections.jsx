@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import NumberIndicator from './NumberIndicator';
 import Statistics from './Statistics';
 import { cutOut, vitalityHaven } from '../constants/data';
-import { GalleryCard, OurServicesCard, TestamonialCard } from './Card';
+import { GalleryCard, OurServicesCard, PriceCard, TestamonialCard } from './Card';
 import GradientCircle from './GradientCircle';
 import Dropdown from './Dropdown';
 
@@ -13,7 +13,7 @@ export const SectionComponent = ({ title, subTitle, subText, style }) => {
     <section className={`flex flex-col gap-6 justify-center ${style}`}>
       <h2 className="text-sm text-orange-500 z-10">{title}</h2>
       <h3 className='text-4xl uppercase font-bold text-white z-10'>{subTitle}</h3>
-      <p className='text-md text-white w-3/4 z-10'>{subText}</p>
+      <p className='text-md text-gray-300 w-3/4 z-10 flex items-center'>{subText}</p>
     </section>
   )
 }
@@ -338,7 +338,7 @@ const TestimonialsSection = ({ title, subTitle, subText, data }) => {
   };
 
   return (
-    <article className='relative container mx-auto py-28 overflow-hidden '>
+    <article className='relative container mx-auto py-28 '>
       <SectionComponent 
         title={title} 
         subTitle={subTitle}
@@ -346,7 +346,7 @@ const TestimonialsSection = ({ title, subTitle, subText, data }) => {
       />
       
       <div 
-        className="relative w-full z-20"
+        className="relative w-full z-20 mt-10"
         onMouseEnter={() => setIsPaused(true)}
         onMouseLeave={() => setIsPaused(false)}
       >
@@ -405,11 +405,86 @@ const TestimonialsSection = ({ title, subTitle, subText, data }) => {
 
       <GradientCircle 
         size={"size-[50rem]"} 
-        position={"absolute bottom-0 left-0 z-[1rem]"}
+        position={"absolute bottom-0 -left-[5rem] z-[1rem]"}
       />
     </article>
   );
 };
 
+const OurPlans = ({ title, subTitle, subText, priceData }) => {
+  return (
+    <article className='container mx-auto py-28 relative'>
+      <SectionComponent 
+        title={ title } 
+        subTitle={ subTitle } 
+        subText={ subText }
+      />
+      <ul className='w-full gap-3 mt-10 grid grid-cols-1 md:grid-cols-3'>
+        {
+          priceData.map((item, index) => {
+            return (
+              <PriceCard 
+                key={`price-card-${index}`}
+                pricePlan={item.id}
+                price={`R${item.price}`} 
+                month={item.period} 
+                subText={item.name}
+                list={item.features}
+              />
+            )
+          })
+        }
+      </ul>
+      <GradientCircle 
+        size={"size-[50rem]"}
+        position={"absolute top-0 right-0"} 
+      />
+      <GradientCircle 
+        size={"size-[25rem]"}
+        position={"absolute bottom-0 left-0"} 
+      />
+    </article>
+  )
+};
 
-export { HeroSection, CompaniesSection, AboutSection, ServicesSection, WhyUsSection, TestimonialsSection };
+
+const LocationSection = ( {title, subTitle, subText, numberOfLocations} ) =>{
+  return (
+    <article className='container mx-auto py-28'>
+        <SectionComponent 
+          title={title} 
+          subTitle={subTitle} 
+          subText={
+            <>
+              <span className='flex flex-col gap-2'>
+                <span className='text-3xl text-center text-white font-semibold flex gap-2 items-center justify-center'>{numberOfLocations} <span className='text-orange-600'>+</span></span>
+                <span className='text-gray-400 text-sm'>Countries</span>
+              </span>
+              <span className='mx-8 border border-gray-500 h-[4rem]'></span>
+              <span className='text-gray-400 text-md'>{subText}</span>
+            </>
+          }
+        />
+
+        <section className='border h-screen mt-10 flex items-center justify-center'>
+          <h1 className='text-white text-4xl text-center'>
+            Map that displays our locations dynamically <br/>goes here
+          </h1>
+        </section>
+    </article>
+    
+  
+  );
+}
+
+
+export { 
+  HeroSection, 
+  CompaniesSection, 
+  AboutSection, 
+  ServicesSection, 
+  WhyUsSection, 
+  TestimonialsSection,
+  OurPlans,
+  LocationSection 
+};
