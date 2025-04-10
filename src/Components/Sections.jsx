@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import NumberIndicator from './NumberIndicator';
 import Statistics from './Statistics';
 import { cutOut, vitalityHaven } from '../constants/data';
-import { GalleryCard, OurServicesCard, PriceCard, TestamonialCard } from './Card';
+import { BlogCard, GalleryCard, OurServicesCard, PriceCard, TestamonialCard } from './Card';
 import GradientCircle from './GradientCircle';
 import Dropdown from './Dropdown';
 
@@ -28,7 +28,7 @@ const HeroSection = ({ ourMedias, mainHeading, subHeadingText, backgroundImage, 
               ourMedias.map((item, index) => (
                 <li 
                   key={index} 
-                  className={`border-2 rounded-md p-1 flex items-center ${onHover ? 'transform transition-transform hover:scale-105' : ''}`}
+                  className={`rounded-md p-1 flex items-center ${onHover ? 'transform transition-transform hover:scale-105' : ''}`}
                 >
                   <a href={item.url} className="size-5 inline-block">
                     <img src={item.mediaIcon} alt={"Follow us on " + item.text} className="w-full h-full" />
@@ -477,6 +477,341 @@ const LocationSection = ( {title, subTitle, subText, numberOfLocations} ) =>{
   );
 }
 
+const MobileAppSection = ({ title, subTitle, subText }) => {
+  return (
+    <article className='relative z-20 price-card border-2 border-orange-600 container mx-auto rounded-xl p-6 md:p-10 my-28'>
+      <SectionComponent 
+        title={title} 
+        subTitle={subTitle} 
+        subText={subText}
+      />
+
+      <section className='mt-8 grid grid-cols-1 md:grid-cols-2 gap-8 items-center'>
+        {/* App Features */}
+        <div className='space-y-6'>
+          <div className='flex items-start gap-4'>
+            <div className='bg-orange-600 p-2 rounded-lg'>
+              <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
+              </svg>
+            </div>
+            <div>
+              <h3 className='text-lg font-semibold text-white'>Personalized Workouts</h3>
+              <p className='text-gray-300'>AI-powered training plans tailored to your goals and progress</p>
+            </div>
+          </div>
+
+          <div className='flex items-start gap-4'>
+            <div className='bg-orange-600 p-2 rounded-lg'>
+              <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+            </div>
+            <div>
+              <h3 className='text-lg font-semibold text-white'>Class Booking</h3>
+              <p className='text-gray-300'>Reserve spots in popular classes with real-time availability</p>
+            </div>
+          </div>
+
+          <div className='flex items-start gap-4'>
+            <div className='bg-orange-600 p-2 rounded-lg'>
+              <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
+              </svg>
+            </div>
+            <div>
+              <h3 className='text-lg font-semibold text-white'>Progress Tracking</h3>
+              <p className='text-gray-300'>Visualize your fitness journey with detailed analytics</p>
+            </div>
+          </div>
+
+          {/* App Store Badges */}
+          <div className='flex flex-wrap gap-4 pt-4'>
+            <a href="#" className='inline-block'>
+              <img src="/app-store-badge.svg" alt="Download on the App Store" className='h-12' />
+            </a>
+            <a href="#" className='inline-block'>
+              <img src="/google-play-badge.svg" alt="Get it on Google Play" className='h-12' />
+            </a>
+          </div>
+        </div>
+
+        {/* Phone Mockup */}
+        <div className='relative flex justify-center'>
+          <div className='relative w-64 h-auto'>
+            {/* Phone frame */}
+            <div className='relative z-10 border-8 border-gray-800 rounded-[2.5rem] h-[500px] w-[250px] mx-auto shadow-xl'>
+              <div className='absolute top-0 left-1/2 transform -translate-x-1/2 w-1/3 h-6 bg-gray-800 rounded-b-2xl'></div>
+              {/* Screen content */}
+              <div className='h-full w-full bg-gray-900 rounded-2xl overflow-hidden'>
+                <img 
+                  src="/app-screenshot.jpg" 
+                  alt="Vitality Haven mobile app" 
+                  className='w-full h-full object-cover'
+                />
+              </div>
+            </div>
+            {/* Glow effect */}
+            <div className='absolute -inset-4 bg-orange-600 rounded-3xl blur-2xl opacity-20'></div>
+          </div>
+        </div>
+      </section>
+
+      <GradientCircle 
+        position={"absolute bottom-0 -left-[10rem]"}
+        size={"size-[25rem] -z-10"}
+      />
+      <GradientCircle 
+        position={"absolute -top-[-5rem] -right-[10rem]"}
+        size={"size-[35rem] -z-10"}
+      />
+    </article>
+  );
+};
+
+const BlogSection = ({ title, subTitle, subText, link, blogPosts }) => {
+  // Filter blogs with more than 6000 views
+  const popularBlogs = blogPosts.filter(post => post.views > 6000);
+  
+  // Get 3 random blogs from the popular ones
+  const randomBlogs = [];
+
+  while (randomBlogs.length < 3 && popularBlogs.length > 0) {
+    const randomIndex = Math.floor(Math.random() * popularBlogs.length);
+    randomBlogs.push(popularBlogs[randomIndex]);
+    popularBlogs.splice(randomIndex, 1); // Avoid duplicates
+  }
+
+  return (
+    <article className='py-28 container mx-auto relative'>
+      <SectionComponent 
+        title={title} 
+        subTitle={subTitle} 
+        subText={
+          <span className='flex w-full justify-between items-center'>
+            <span>{subText}</span>
+            <a href={link || "#"} className='absolute right-0 text-center text-orange-500 font-semibold hover:text-orange-600 transition-colors'>
+              See All →
+            </a>
+          </span>
+        }
+      />
+
+      <section className='mt-10'>
+      <ul className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8'>
+          {
+            randomBlogs.map((post, index) => (
+              <li key={`blog-${index}`} className='price-card rounded-2xl overflow-hidden hover:shadow-2xl transition-shadow shadow-white/10'>
+                <article className='h-full flex flex-col'>
+                  <div className='h-48 overflow-hidden'>
+                    <img 
+                      src={post.featuredImage} 
+                      alt={post.title} 
+                      className='w-full h-full object-cover'
+                    />
+                  </div>
+                  <div className='p-6 flex-grow flex flex-col'>
+                    <div className='flex items-center justify-between mb-2'>
+                      <span className='text-sm font-medium text-orange-500'>{post.category}</span>
+                      <span className='text-sm text-gray-200'>{post.readTime}</span>
+                    </div>
+                    <h3 className='text-xl font-bold text-white mb-3'>{post.title}</h3>
+                    <p className='text-gray-200 mb-4 flex-grow'>{post.excerpt}</p>
+                    <div className='flex justify-between items-center text-sm text-gray-300 border-t border-white/10 pt-3'>
+                      <span>{new Date(post.date).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })}</span>
+                      <div className='flex items-center space-x-3'>
+                        <span className='flex items-center'>
+                          <svg className='w-4 h-4 mr-1' fill='none' stroke='currentColor' viewBox='0 0 24 24'>
+                            <path strokeLinecap='round' strokeWidth='2' d='M15 12a3 3 0 11-6 0 3 3 0 016 0z' />
+                            <path strokeLinecap='round' strokeWidth='2' d='M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z' />
+                          </svg>
+                          {post.views.toLocaleString()}
+                        </span>
+                        <span className='flex items-center'>
+                          <svg className='w-4 h-4 mr-1' fill='none' stroke='currentColor' viewBox='0 0 24 24'>
+                            <path strokeLinecap='round' strokeWidth='2' d='M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z' />
+                          </svg>
+                          {post.likes.toLocaleString()}
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                </article>
+              </li>
+            ))
+          }
+        </ul>
+
+      </section>
+    </article>
+  );
+}
+
+const FooterSection = ({ quickLinks, contactInfo, careers, legal, newsletter, mobileApp }) => {
+  return (
+    <footer className="bg-gray-900 text-gray-300 py-12 px-4 sm:px-6 lg:px-8">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 max-w-7xl mx-auto">
+        {/* Quick Links */}
+        <section className="lg:col-span-1">
+          <h2 className="text-white text-lg font-semibold mb-4 border-b border-gray-700 pb-2">Quick Links</h2>
+          <ul className="space-y-2">
+            {quickLinks.map((item, index) => (
+              <li key={`quick-links-${index}`}>
+                <a 
+                  href={item.url || "#"} 
+                  className="hover:text-white transition-colors duration-200"
+                >
+                  {item.title}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </section>
+
+        {/* Careers */}
+        <section className="lg:col-span-1">
+          <h2 className="text-white text-lg font-semibold mb-4 border-b border-gray-700 pb-2">Careers</h2>
+          <ul className="space-y-2">
+            {careers.map((item, index) => (
+              <li key={`career-links-${index}`}>
+                <a 
+                  href={item.applyLink || "#"} 
+                  className="hover:text-white transition-colors duration-200"
+                >
+                  {item.position}
+                </a>
+                <span className="block text-xs text-gray-500">{item.location}</span>
+              </li>
+            ))}
+          </ul>
+        </section>
+
+        {/* Legal */}
+        <section className="lg:col-span-1">
+          <h2 className="text-white text-lg font-semibold mb-4 border-b border-gray-700 pb-2">Legal</h2>
+          <ul className="space-y-2">
+            {legal.links.map((item, index) => (
+              <li key={`legal-links-${index}`}>
+                <a 
+                  href={item.url || "#"} 
+                  className="hover:text-white transition-colors duration-200"
+                >
+                  {item.title}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </section>
+
+        {/* Mobile App */}
+        <section className="lg:col-span-1">
+          <h2 className="text-white text-lg font-semibold mb-4 border-b border-gray-700 pb-2">{mobileApp.title}</h2>
+          <p className="mb-4">{mobileApp.description}</p>
+          <div className="flex space-x-4">
+            <a href={mobileApp.appStore} className="block w-32">
+              <img 
+                src="/images/app-store-badge.svg" 
+                alt="Download on the App Store" 
+                className="w-full h-auto"
+              />
+            </a>
+            <a href={mobileApp.playStore} className="block w-32">
+              <img 
+                src="/images/play-store-badge.svg" 
+                alt="Get it on Google Play" 
+                className="w-full h-auto"
+              />
+            </a>
+          </div>
+        </section>
+
+        {/* Newsletter */}
+        <section className="lg:col-span-1">
+          <h2 className="text-white text-lg font-semibold mb-4 border-b border-gray-700 pb-2">{newsletter.title}</h2>
+          <p className="mb-4">{newsletter.description}</p>
+          <form className="flex flex-col space-y-3">
+            <input 
+              type="email" 
+              placeholder={newsletter.placeholder} 
+              className="px-4 py-2 rounded bg-gray-800 border border-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500"
+            />
+            <button 
+              type="submit" 
+              className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded transition-colors duration-200"
+            >
+              {newsletter.cta}
+            </button>
+          </form>
+          <ul className="mt-4 text-sm space-y-1">
+            {newsletter.benefits.map((benefit, index) => (
+              <li key={`benefit-${index}`} className="flex items-start">
+                <svg className="h-4 w-4 text-blue-500 mr-2 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                </svg>
+                {benefit}
+              </li>
+            ))}
+          </ul>
+        </section>
+
+        {/* Contact Information - Full width */}
+        <section className="col-span-full mt-8 pt-8 border-t border-gray-800">
+          <h2 className="text-white text-lg font-semibold mb-4">Contact Information</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4">
+            <div>
+              <h3 className="text-sm font-medium text-gray-400 mb-1">General Inquiries</h3>
+              <a href={`mailto:${contactInfo.generalEmail}`} className="hover:text-white transition-colors duration-200">
+                {contactInfo.generalEmail}
+              </a>
+            </div>
+            <div>
+              <h3 className="text-sm font-medium text-gray-400 mb-1">Support</h3>
+              <a href={`mailto:${contactInfo.supportEmail}`} className="hover:text-white transition-colors duration-200">
+                {contactInfo.supportEmail}
+              </a>
+            </div>
+            <div>
+              <h3 className="text-sm font-medium text-gray-400 mb-1">Phone</h3>
+              <a href={`tel:${contactInfo.phone.replace(/[^\d+]/g, '')}`} className="hover:text-white transition-colors duration-200">
+                {contactInfo.phone}
+              </a>
+            </div>
+            <div className="lg:col-span-2">
+              <h3 className="text-sm font-medium text-gray-400 mb-1">Corporate Address</h3>
+              <address className="not-italic">
+                {contactInfo.corporateAddress}
+                <br />
+                <span className="text-sm text-gray-400">{contactInfo.hours}</span>
+              </address>
+            </div>
+          </div>
+        </section>
+
+        {/* Copyright - Full width */}
+        <section className="col-span-full mt-8 pt-6 border-t border-gray-800">
+          <div className="flex flex-col md:flex-row justify-between items-center">
+            <p className="text-sm text-gray-500">{legal.copyright}</p>
+            <div className="flex space-x-6 mt-4 md:mt-0">
+              {Object.entries(contactInfo.socialMedia || {}).map(([platform, { url, handle }]) => (
+                <a 
+                  key={platform} 
+                  href={url} 
+                  className="text-gray-400 hover:text-white transition-colors duration-200"
+                  aria-label={platform}
+                >
+                  <span className="sr-only">{platform}</span>
+                  {/* Example using simple text - replace with actual icons */}
+                  {platform}
+                </a>
+              ))}
+            </div>
+          </div>
+        </section>
+      </div>
+    </footer>
+  );
+};
+
 
 export { 
   HeroSection, 
@@ -486,5 +821,8 @@ export {
   WhyUsSection, 
   TestimonialsSection,
   OurPlans,
-  LocationSection 
+  LocationSection,
+  MobileAppSection,
+  BlogSection,
+  FooterSection 
 };

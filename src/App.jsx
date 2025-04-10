@@ -1,7 +1,7 @@
 import React from 'react'
 import { socialMediaIcons, vitalityHaven, vitalityHavenLogo } from './constants/data';
 import { DesktopNavigation } from './Components/Navigation';
-import { AboutSection, CompaniesSection, HeroSection, LocationSection, OurPlans, ServicesSection, TestimonialsSection, WhyUsSection } from './Components/Sections';
+import { AboutSection, BlogSection, CompaniesSection, FooterSection, HeroSection, LocationSection, MobileAppSection, OurPlans, ServicesSection, TestimonialsSection, WhyUsSection } from './Components/Sections';
 
 
 const App = () => {
@@ -108,6 +108,31 @@ const App = () => {
         subTitle={"Our Global Presence: Fitness Centers Around The World"} 
         subText={"No matter where you are our gyms are here to help you reach your fitness goals. With location across the globe. findig a gym near you is easy. Explore our map and join our wold wide community Today."} 
         numberOfLocations={ vitalityHaven.gymInfo.gymStats.locations.length }
+      />
+
+      <BlogSection 
+        title={"Latest Blogs"} 
+        subTitle={"We’re not just about fitness — we’re about connection, knowledge, and growth"} 
+        subText={
+          "Science meets sweat. Explore practical health tips, mental hacks, and the truth behind the trends—straight from our community and experts."
+        }
+        blogPosts={ vitalityHaven.blogPosts }        
+      />
+
+
+      <MobileAppSection 
+        title="MOBILE APP" 
+        subTitle="Your Fitness Journey In Your Pocket" 
+        subText="Access all Vitality Haven features anytime, anywhere with our powerful mobile application."
+      />
+
+      <FooterSection 
+        quickLinks={vitalityHaven.footerContent.quickLinks}
+        contactInfo={vitalityHaven.footerContent.contactInfo}
+        careers={vitalityHaven.footerContent.careers.currentOpenings}
+        legal={vitalityHaven.footerContent.legal}
+        newsletter={vitalityHaven.footerContent.newsletter}
+        mobileApp={vitalityHaven.footerContent.appDownload}
       />
       
     </>

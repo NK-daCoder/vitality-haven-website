@@ -1375,126 +1375,176 @@ const vitalityHaven = {
   
     // Blog Content Ideas
     blogPosts: [
-        {
-          title: "The Vitality Morning Blueprint: How Our Top Members Start Their Days",
-          excerpt: "We shadowed 12 of our most consistent members for a week to uncover the non-negotiable habits that fuel their success.",
-          category: "Lifestyle",
-          date: "2024-01-15",
-          readTime: "12 min",
-          contentSections: [
-            "5:30 AM Hydration Rituals: Why lemon water beats coffee as a first drink",
-            "The 7-Minute Mobility Sequence they all do before breakfast",
-            "How they use 'habit stacking' to make fitness automatic",
-            "The surprising bedtime habits that make early workouts easier"
-          ],
-          featuredImage: "/blog/morning-routines.jpg",
-          trainerQuote: "Consistency beats intensity every time. These members prove small daily habits create massive transformations. - Marcus Johnson"
-        },
-        {
-          title: "Macros Made Meaningful: A Food Lover's Guide to Nutrition",
-          excerpt: "Stop counting grams and start understanding how food works for your unique body and goals.",
-          category: "Nutrition",
-          date: "2024-01-08",
-          readTime: "15 min",
-          contentSections: [
-            "The 'Vitality Plate' method for perfect portions without scales",
-            "How to identify your personal carb tolerance",
-            "5 surprising high-protein foods our trainers swear by",
-            "Why your workout timing changes your nutritional needs"
-          ],
-          featuredImage: "/blog/macro-plate.jpg",
-          recipeIncluded: true
-        },
-        {
-          title: "Gym Sanctuary: Designing Your Home for Movement",
-          excerpt: "Transform your living space into an environment that naturally encourages activity without expensive equipment.",
-          category: "Lifestyle",
-          date: "2023-12-18",
-          readTime: "10 min",
-          contentSections: [
-            "The 5 zones every movement-friendly home needs",
-            "How to turn household items into workout tools",
-            "Furniture arrangements that burn extra calories",
-            "Our trainers' favorite minimalist home equipment"
-          ],
-          featuredImage: "/blog/home-gym-design.jpg",
-          memberSpotlight: "After implementing these tips, I went from 3,000 to 12,000 daily steps without 'working out'. - Linda R., member since 2022"
-        },
-        {
-          title: "The Connection Cure: How Group Fitness Fights Loneliness",
-          excerpt: "New research shows our cycling classes may be as important for mental health as physical health.",
-          category: "Wellness",
-          date: "2023-12-01",
-          readTime: "9 min",
-          contentSections: [
-            "The science of 'sweat bonding' and oxytocin release",
-            "How we design classes to foster connections",
-            "Member stories: From workout buddies to lifelong friends",
-            "Why accountability partners triple success rates"
-          ],
-          featuredImage: "/blog/group-fitness.jpg",
-          researchCited: ["Journal of Sport Psychology (2023)", "Mayo Clinic Social Wellness Study"]
-        },
-        {
-          title: "Digital Detox for Better Workouts: Reclaim Your Focus",
-          excerpt: "Why leaving your phone in your locker could be the key to your best performance yet.",
-          category: "Lifestyle",
-          date: "2023-11-27",
-          readTime: "8 min",
-          contentSections: [
-            "How constant notifications sabotage your gains",
-            "The 45-minute phone-free challenge our members love",
-            "What heart rate data reveals about tech distractions",
-            "Mindful movement techniques to deepen your practice"
-          ],
-          featuredImage: "/blog/digital-detox.jpg",
-          challenge: "Try our #NoPhoneFit challenge this week!"
-        },
-        {
-          title: "Seasonal Eating for Winter Energy: A Trainer's Pantry",
-          excerpt: "What our nutrition coaches actually eat during colder months to maintain energy and immunity.",
-          category: "Nutrition",
-          date: "2023-11-14",
-          readTime: "11 min",
-          contentSections: [
-            "The root vegetable roast everyone makes in bulk",
-            "Why winter is the best time for protein-packed soups",
-            "3 unexpected spices that boost metabolism in cold weather",
-            "How to modify your macros when daylight decreases"
-          ],
-          featuredImage: "/blog/winter-food.jpg",
-          seasonalRecipes: 4
-        },
-        {
-          title: "From Gym to Life: How Fitness Habits Build Career Success",
-          excerpt: "Members report unexpected professional breakthroughs after consistent training - here's why.",
-          category: "Lifestyle",
-          date: "2023-11-05",
-          readTime: "14 min",
-          contentSections: [
-            "How discipline in the gym translates to workplace productivity",
-            "The cognitive benefits of strategic workout timing",
-            "Case study: The CEO who credits morning yoga for her promotion",
-            "Why creative professionals need strength training"
-          ],
-          featuredImage: "/blog/gym-to-office.jpg",
-          executiveInterviews: true
-        },
-        {
-          title: "The Art of Active Recovery: Why Our Sauna Sessions Sell Out",
-          excerpt: "Discover the science behind our most relaxing (and surprisingly effective) recovery modality.",
-          category: "Wellness",
-          date: "2023-10-30",
-          readTime: "7 min",
-          contentSections: [
-            "Temperature cycling for muscle repair",
-            "How to maximize 15 minutes in the sauna",
-            "The perfect post-sauna cool-down routine",
-            "Why our members pair sauna with yoga nidra"
-          ],
-          featuredImage: "/blog/sauna-benefits.jpg",
-          bookingNote: "Pro tip: Book sauna sessions after 7pm when waitlists shorten"
-        }
+      {
+        title: "The Neuroscience of Muscle Memory: How Your Brain Learns Movements",
+        excerpt: "Discover how your brain encodes movement patterns and how to leverage this for faster skill acquisition in any sport or exercise.",
+        category: "Neuroscience",
+        date: "2024-03-15",
+        readTime: "8 min",
+        likes: 1243,
+        views: 8560,
+        contentSections: [
+          "The role of the cerebellum in movement automation",
+          "How many repetitions it really takes to form a new neural pathway",
+          "Why sleeping after practice improves performance by 20-30%",
+          "The surprising way mirror neurons help perfect your form"
+        ],
+        featuredImage: "/blog/neuroscience-muscle.jpg",
+        researchCited: [
+          "Journal of Neurophysiology (2023)",
+          "Nature Neuroscience Study on Motor Learning"
+        ],
+        trainerQuote: "What we call 'muscle memory' is actually brain memory - your nervous system is the true athlete. - Dr. Rebecca Stern"
+      },
+      {
+        title: "5 Biohacks to Boost Your Workout Performance",
+        excerpt: "Science-backed tricks to enhance energy, focus, and recovery using cutting-edge neuroscience and physiology research.",
+        category: "Performance Tips",
+        date: "2024-03-10",
+        readTime: "6 min",
+        likes: 892,
+        views: 5420,
+        contentSections: [
+          "The 2-minute breathing technique that increases oxygen uptake",
+          "How cold exposure pre-workout can enhance endurance",
+          "The optimal caffeine timing based on your chronotype",
+          "Why chewing gum between sets improves power output",
+          "How blue light exposure post-workout accelerates recovery"
+        ],
+        featuredImage: "/blog/biohacks-performance.jpg",
+        researchCited: [
+          "European Journal of Applied Physiology",
+          "Journal of Sports Sciences"
+        ]
+      },
+      {
+        title: "The Cognitive Benefits of Strength Training You Never Knew",
+        excerpt: "Lifting weights does more than build muscle - it literally reshapes your brain for better thinking and mental resilience.",
+        category: "Neuroscience",
+        date: "2024-03-05",
+        readTime: "10 min",
+        likes: 1567,
+        views: 9230,
+        contentSections: [
+          "How resistance training increases BDNF (brain-derived neurotrophic factor)",
+          "The connection between grip strength and cognitive decline",
+          "Why compound lifts improve decision-making skills",
+          "The ideal rest periods for mental benefits vs physical gains"
+        ],
+        featuredImage: "/blog/strength-brain.jpg",
+        researchCited: [
+          "Harvard Brain Health Study",
+          "Frontiers in Aging Neuroscience"
+        ],
+        memberSpotlight: "After 6 months of strength training, my focus at work improved dramatically - I cut my ADHD medication dose in half. - Mark T., member since 2022"
+      },
+      {
+        title: "The 90-Second Rule: How to Push Past Mental Barriers",
+        excerpt: "Neuroscience reveals why you want to quit at the 90-second mark - and how elite athletes override this instinct.",
+        category: "Mindset",
+        date: "2024-02-28",
+        readTime: "5 min",
+        likes: 2105,
+        views: 12400,
+        contentSections: [
+          "The brain's threat detection system during exertion",
+          "Why discomfort peaks then plateaus",
+          "Verbal cues that reduce perceived effort by 15%",
+          "How to reframe your body's warning signals"
+        ],
+        featuredImage: "/blog/90-second-rule.jpg",
+        researchCited: [
+          "Journal of Applied Physiology",
+          "Sports Medicine Research Institute"
+        ],
+        challenge: "Try our #90SecondChallenge this week!"
+      },
+      {
+        title: "Sleep Like an Athlete: Recovery Science for Better Gains",
+        excerpt: "Optimize your sleep architecture using techniques from Olympic training centers and sleep labs.",
+        category: "Recovery",
+        date: "2024-02-22",
+        readTime: "12 min",
+        likes: 1789,
+        views: 9870,
+        contentSections: [
+          "The 4 sleep cycles and their specific recovery functions",
+          "How to time your workouts for optimal sleep quality",
+          "The temperature sweet spot for muscle repair",
+          "Why your sleeping position affects DOMS (delayed onset muscle soreness)",
+          "Sleep supplements that actually work (and 3 that don't)"
+        ],
+        featuredImage: "/blog/sleep-recovery.jpg",
+        researchCited: [
+          "National Sleep Foundation Guidelines",
+          "Stanford Sleep Research Center"
+        ],
+        trainerQuote: "You don't grow in the gym - you grow in bed. Recovery is where the magic happens. - Sarah Miller"
+      },
+      {
+        title: "The Pre-Workout Brain Hack Navy SEALs Use",
+        excerpt: "This simple 30-second technique can increase workout intensity and enjoyment by activating your brain's reward system.",
+        category: "Neuroscience",
+        date: "2024-02-15",
+        readTime: "4 min",
+        likes: 2450,
+        views: 15320,
+        contentSections: [
+          "How dopamine priming works",
+          "The exact visualization sequence used by special forces",
+          "Why this works better than caffeine for some people",
+          "How to measure your personal response"
+        ],
+        featuredImage: "/blog/navy-seal-hack.jpg",
+        researchCited: [
+          "Journal of Special Operations Medicine",
+          "Neuropsychology Review"
+        ]
+      },
+      {
+        title: "Why Your Workout Playlist Is Holding You Back",
+        excerpt: "New research reveals how music tempo and lyrics affect strength, endurance, and form - and what to listen to instead.",
+        category: "Performance Tips",
+        date: "2024-02-10",
+        readTime: "7 min",
+        likes: 1320,
+        views: 7650,
+        contentSections: [
+          "The ideal BPM range for different workout types",
+          "How lyrical content affects motor control",
+          "When silence is better than music",
+          "The unexpected benefits of nature sounds for recovery",
+          "How to create the perfect workout playlist"
+        ],
+        featuredImage: "/blog/workout-music.jpg",
+        researchCited: [
+          "Journal of Sports Exercise Psychology",
+          "Baylor University Music Study"
+        ],
+        memberSpotlight: "Switching to instrumental music added 20lbs to my deadlift in 8 weeks - the focus difference was incredible. - Jenna L., powerlifting member"
+      },
+      {
+        title: "The Cognitive Cost of Multitasking During Workouts",
+        excerpt: "Checking your phone between sets? Neuroscience shows why this sabotages your gains and how to stay focused.",
+        category: "Neuroscience",
+        date: "2024-02-05",
+        readTime: "9 min",
+        likes: 987,
+        views: 6320,
+        contentSections: [
+          "How task-switching depletes neural resources",
+          "The 'attention residue' effect on muscle activation",
+          "Why your rest periods are more important than you think",
+          "5 techniques to maintain workout focus",
+          "How to measure your personal focus threshold"
+        ],
+        featuredImage: "/blog/multitasking-gains.jpg",
+        researchCited: [
+          "Journal of Cognitive Neuroscience",
+          "Human Performance Laboratory Studies"
+        ],
+        challenge: "Try our #NoPhoneWorkout challenge!"
+      }
     ],
   
     // Contact Information
@@ -1542,7 +1592,145 @@ const vitalityHaven = {
             type: "rooftop yoga deck"
         }
         
-    ]
+    ],
+
+    footerContent: {
+    
+      quickLinks: [
+        { title: "Membership Plans", url: "/memberships" },
+        { title: "Class Schedule", url: "/schedule" },
+        { title: "Personal Training", url: "/training" },
+        { title: "Online Courses", url: "/courses" },
+        { title: "Blog", url: "/blog" },
+        { title: "Locations", url: "/locations" }
+      ],
+
+      contactInfo: {
+        generalEmail: "hello@vitalityhaven.com",
+        supportEmail: "support@vitalityhaven.com",
+        phone: "+1 (555) 789-0123",
+        corporateAddress: "200 Hudson Yards, New York, NY 10001",
+        hours: "Monday-Friday: 8AM-8PM EST"
+      },
+
+      careers: {
+        title: "Join Our Team",
+        description: "We're always looking for passionate fitness professionals and support staff to join our growing family.",
+        currentOpenings: [
+          {
+            position: "Personal Trainer",
+            type: "Full-time",
+            location: "Multiple Locations",
+            requirements: [
+              "NASM/ACE certification or equivalent",
+              "2+ years training experience",
+              "Specialization in one discipline"
+            ],
+            applyLink: "/careers/trainer"
+          },
+          {
+            position: "Group Fitness Instructor",
+            type: "Part-time/Contract",
+            location: "Multiple Locations",
+            requirements: [
+              "Certification in specialty area",
+              "Dynamic teaching ability",
+              "Weekend availability preferred"
+            ],
+            applyLink: "/careers/instructor"
+          },
+          {
+            position: "Wellness Coordinator",
+            type: "Full-time",
+            location: "New York, NY",
+            requirements: [
+              "Degree in kinesiology or related field",
+              "3+ years in wellness programming",
+              "Excellent organizational skills"
+            ],
+            applyLink: "/careers/wellness"
+          },
+          {
+            position: "Front Desk Associate",
+            type: "Part-time",
+            location: "Los Angeles, CA",
+            requirements: [
+              "Customer service experience",
+              "Basic fitness knowledge",
+              "Flexible schedule"
+            ],
+            applyLink: "/careers/frontdesk"
+          },
+          {
+            position: "Digital Content Creator",
+            type: "Contract",
+            location: "Remote",
+            requirements: [
+              "Portfolio of fitness content",
+              "Video editing skills",
+              "Understanding of fitness trends"
+            ],
+            applyLink: "/careers/content"
+          },
+          {
+            position: "Facility Manager",
+            type: "Full-time",
+            location: "Chicago, IL",
+            requirements: [
+              "5+ years gym management",
+              "Budgeting experience",
+              "Staff leadership skills"
+            ],
+            applyLink: "/careers/manager"
+          }
+        ],
+        benefits: [
+          "Competitive compensation packages",
+          "Free premium membership",
+          "Continuing education stipends",
+          "Health and wellness benefits",
+          "Career advancement opportunities",
+          "Global location transfers"
+        ],
+        culture: "At Vitality Haven, we foster a culture of growth, collaboration, and passion for transforming lives through fitness. Our team enjoys a dynamic work environment with regular team workouts, education days, and community events."
+      },
+
+      legal: {
+        copyright: `© ${new Date().getFullYear()} Vitality Haven International. All rights reserved.`,
+        links: [
+          { title: "Privacy Policy", url: "/privacy" },
+          { title: "Terms of Service", url: "/terms" },
+          { title: "Accessibility", url: "/accessibility" },
+          { title: "Do Not Sell My Info", url: "/privacy#donotsell" }
+        ]
+      },
+
+      newsletter: {
+        title: "Stay Connected",
+        description: "Get exclusive fitness tips, class updates, and special offers delivered to your inbox.",
+        placeholder: "Your email address",
+        cta: "Subscribe",
+        benefits: [
+          "Weekly workout inspiration",
+          "Member-only discounts",
+          "First access to new programs",
+          "Healthy recipes and nutrition tips"
+        ]
+      },
+
+      appDownload: {
+        title: "Vitality Haven App",
+        description: "Book classes, track workouts, and connect with trainers on our mobile app.",
+        appStore: "/download-ios",
+        playStore: "/download-android",
+        features: [
+          "Real-time class availability",
+          "Digital locker",
+          "Workout history",
+          "Community challenges"
+        ]
+      }
+    }
 };
   
 // Sample function to display featured classes
