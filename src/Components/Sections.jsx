@@ -3,22 +3,25 @@ import PropTypes from 'prop-types';
 import NumberIndicator from './NumberIndicator';
 import Statistics from './Statistics';
 import { cutOut, vitalityHaven } from '../constants/data';
-import { BlogCard, GalleryCard, OurServicesCard, PriceCard, TestamonialCard } from './Card';
+import { GalleryCard, OurServicesCard, PriceCard, TestamonialCard } from './Card';
 import GradientCircle from './GradientCircle';
 import Dropdown from './Dropdown';
+import "../assets/styles/effect.css";
 
 
 export const SectionComponent = ({ title, subTitle, subText, style }) => {
   return (
     <section className={`flex flex-col gap-6 justify-center ${style}`}>
-      <h2 className="text-sm text-orange-500 z-10">{title}</h2>
+      <h2 className="text-sm text-orange-500 z-10 uppercase">{title}</h2>
       <h3 className='text-4xl uppercase font-bold text-white z-10'>{subTitle}</h3>
       <p className='text-md text-gray-300 w-3/4 z-10 flex items-center'>{subText}</p>
     </section>
   )
 }
 
-const HeroSection = ({ ourMedias, mainHeading, subHeadingText, backgroundImage, video, hasVideo = true, onHover = true }) => {
+
+
+const HeroSection = ({ renderCompanies ,ourMedias, mainHeading, subHeadingText, backgroundImage, video, hasVideo = true, onHover = true }) => {
   return (
     <section aria-label='hero section' className="h-screen relative">
       <article className='container mx-auto h-full relative flex'>
@@ -41,9 +44,10 @@ const HeroSection = ({ ourMedias, mainHeading, subHeadingText, backgroundImage, 
 
         <section className="h-full flex flex-col items-center justify-center">
           <h1 className="z-20 px- text-6xl text-center text-white font-semibold uppercase leading-snug ">{ mainHeading }</h1>
+          {renderCompanies}
         </section>
 
-        <NumberIndicator indexNumber={"01"}/>
+        
       </article>
       
       {/* Background media */}
@@ -70,7 +74,10 @@ const HeroSection = ({ ourMedias, mainHeading, subHeadingText, backgroundImage, 
           />
         </div>
       )}
+      
     </section>
+
+    
   )
 }
 
@@ -99,42 +106,7 @@ HeroSection.defaultProps = {
   onHover: true
 };
 
-const CompaniesSection = ({ trustedCompanies }) => {
-  return (
-    <div className="relative overflow-hidden py-8">
-      <div className="absolute inset-y-0 left-0 w-16 bg-gradient-to-r from-black to-transparent z-10"></div>
-      <div className="absolute inset-y-0 right-0 w-16 bg-gradient-to-l from-black to-transparent z-10"></div>
-      
-      <div className="flex">
-        {/* First set for seamless looping */}
-        <ul className="flex items-center justify-center min-w-full animate-scroll">
-          {trustedCompanies.map((item) => (
-            <li key={`trustedCompanies-${item.id.toString()}`} className="mx-8 shrink-0">
-              <img 
-                src={item.logo} 
-                alt={item.name} 
-                className="size-28 object-contain filter grayscale-0  transition-all duration-300 hover:scale-110"
-              />
-            </li>
-          ))}
-        </ul>
-        
-        {/* Duplicate set for seamless looping */}
-        <ul className="flex items-center justify-center min-w-full animate-scroll">
-          {trustedCompanies.map((item) => (
-            <li key={`trustedCompanies-duplicate-${item.id.toString()}`} className="mx-8 shrink-0">
-              <img 
-                src={item.logo} 
-                alt={item.name} 
-                className="max-h-12 object-contain grayscale hover:grayscale-0 transition-all duration-300 hover:scale-110"
-              />
-            </li>
-          ))}
-        </ul>
-      </div>
-    </div>
-  );
-};
+
 
 
 const AboutSection = ({ title, subTitle, subText, statistics, videoSource }) => {
@@ -261,43 +233,78 @@ const ServicesSection = ({ title, subTitle, subText, services }) => {
   )
 }
 
-const WhyUsSection = () => {
+const WhyUsSection = ({
+  title,
+  subTitle,
+  subText,
+  primaryImage,
+  listOne,
+  listTwo
+}) => {
   return (
-    <article className='container mx-auto py-24 relative '>
+    <article className='container mx-auto px-4 py-12 md:py-24 relative overflow-hidden'>
       <SectionComponent 
-        title={"Preferences"} 
-        subTitle={"Why Choose Us For Your Fitness Journey"} 
-        subText={"takeing care af your fitness"}
+        title={title} 
+        subTitle={subTitle} 
+        subText={subText}
       />
-      <section className='grid grid-cols-2 gap-5 justify-items-center'>
-        <GalleryCard 
-          primaryImage={cutOut.gymCouple} 
-          secondaryImage={cutOut.manPumpIron} 
-          thirdImage={cutOut.womenBodyBuilder}
-        />
-        <ul className='flex flex-col gap-3 justify-center items-center'>
-          <Dropdown 
-            dropdownTitle={"Learn More"} 
-            content={"fhiedhwihfehgwgfgvdvshgvchgdvsghvcdhgvscgvscvhsgvcsdjvcsdhcvdghvshcvdgvjh"}
-          />
-          <Dropdown 
-            dropdownTitle={"Learn More"} 
-            content={"fhiedhwihfehgwgfgvdvshgvchgdvsghvcdhgvscgvscvhsgvcsdjvcsdhcvdghvshcvdgvjhfgewgfgyewgfyuewgygwfgewgfywgfuygfgfyewgduygwuydguwgduegduygwydguyegugywudygewugydw"}
-          />
+
+      <section className='flex gap-8 h-screen mt-8 md:pt-20 items-center'>
+        
+        
+
+        {/* Optional Images - Center Column (hidden on mobile) */}
+     
+          {primaryImage && (
+            
+              <img 
+                src={primaryImage} 
+                alt='Primary Visual' 
+                className='w-[30rem]  animate-float z-20 object-contain' 
+              />
+            
+            
+          )
+        }
+      
+
+        {/* List Two - Right Column */}
+        <ul className='flex-1 flex flex-col gap-4 w-full '>
+          {listTwo.map((item, index) => (
+            <Dropdown
+              key={`listTwo-${index}`} 
+              dropdownTitle={item.title} 
+              content={
+                <section className='space-y-3 text-gray-300'>
+                  <p>{item.content}</p>
+                  <ul className='space-y-2 pl-5'>
+                    {item.list.map((subItem, subIndex) => (
+                      <li key={`subitem-${subIndex}`} className='relative before:absolute before:-left-4 before:content-["✓"] before:text-primary'>
+                        {subItem}
+                      </li>
+                    ))}
+                  </ul>
+                </section>
+              }
+            />
+          ))}
         </ul>
       </section>
 
+
+      {/* Gradient Background Effects */}
       <GradientCircle 
-        size={"size-[50rem]"} 
-        position={"absolute -top-10 left-0"}
+        size={"w-[30rem] h-[30rem] md:w-[50rem] md:h-[50rem]"} 
+        position={"absolute -top-20 -left-20 md:-top-10 md:-left-10"} 
       />
       <GradientCircle 
-        size={"size-[15rem]"} 
-        position={"absolute bottom-0 right-0"}
+        size={"w-[10rem] h-[10rem] md:w-[15rem] md:h-[15rem]"} 
+        position={"absolute bottom-10 -right-10 md:bottom-0 md:right-0"} 
       />
     </article>
   );
-}
+};
+
 
 const TestimonialsSection = ({ title, subTitle, subText, data }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -815,7 +822,7 @@ const FooterSection = ({ quickLinks, contactInfo, careers, legal, newsletter, mo
 
 export { 
   HeroSection, 
-  CompaniesSection, 
+  
   AboutSection, 
   ServicesSection, 
   WhyUsSection, 

@@ -1,7 +1,8 @@
 import React from 'react'
-import { socialMediaIcons, vitalityHaven, vitalityHavenLogo } from './constants/data';
+import { cutOut, socialMediaIcons, vitalityHaven, vitalityHavenLogo } from './constants/data';
 import { DesktopNavigation } from './Components/Navigation';
-import { AboutSection, BlogSection, CompaniesSection, FooterSection, HeroSection, LocationSection, MobileAppSection, OurPlans, ServicesSection, TestimonialsSection, WhyUsSection } from './Components/Sections';
+import "./assets/styles/effect.css"
+import { AboutSection, BlogSection, FooterSection, HeroSection, LocationSection, MobileAppSection, OurPlans, ServicesSection, TestimonialsSection, WhyUsSection } from './Components/Sections';
 
 
 const App = () => {
@@ -44,10 +45,20 @@ const App = () => {
         onHover={true}
 
         mainHeading={ vitalityHaven.gymInfo.slogan }
-      />
 
-      <CompaniesSection 
-        trustedCompanies={vitalityHaven.trustedCompanies}
+        renderCompanies={
+          <ul className='flex justify-between w-full z-20 absolute bottom-0 items-center'>
+            {
+              vitalityHaven.trustedCompanies.map((item, index) => {
+                return (
+                  <li key={index}>
+                    <img src={item.logo} alt={item.name} className='w-[5.5rem] image-filter-white'/>
+                  </li>
+                )
+              })
+            }
+          </ul>
+        }
       />
 
       <AboutSection 
@@ -72,7 +83,18 @@ const App = () => {
         services={ vitalityHaven.services }
       />
 
-      <WhyUsSection />
+      <WhyUsSection 
+        title={"Why Choose Us"} 
+        subTitle={"We don’t just offer a place to train — we offer a better way to live."} 
+        subText={"Let’s get real about why Vitality Haven Health Club isn’t just another gym, but a solution to everything that’s broken in the modern fitness industry. This isn’t about flashy equipment or cookie-cutter classes—this is about solving actual problems people face daily when they try to take control of their health."}
+
+        primaryImage={cutOut.womenBodyBuilder}
+
+        listOne={ vitalityHaven.gymInfo.vitalityHavenSellingPoints.problemsWithGymHeatlthClubs }
+        listTwo={ vitalityHaven.gymInfo.vitalityHavenSellingPoints.vitalityHavenSolution }
+
+
+      />
 
       <TestimonialsSection 
         title={"Real Transformations, Real Stories"} 

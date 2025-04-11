@@ -248,23 +248,8 @@ const PriceCard = ({ pricePlan, price, month, subText, list }) => {
   )
 }
 
-const BlogCard = ({ post }) => (
-  <li className="p-5 flex flex-col md:flex-row gap-4 rounded-2xl bg-white/10 backdrop-blur-md border border-white/20 shadow-lg">
-    <img 
-      src={post.featuredImage} 
-      alt={post.title} 
-      className="w-full md:w-52 h-40 object-cover rounded-lg" 
-    />
-    <div className="flex-1">
-      <h3 className="text-xl font-bold text-white mb-1">{post.title}</h3>
-      <p className="text-sm text-gray-200 mb-2">{post.excerpt}</p>
-      <div className="text-xs text-orange-400 font-medium">
-        {post.category} • {post.date} • {post.readTime} • {post.views.toLocaleString()} views
-      </div>
-    </div>
-  </li>
-);
 
 
 
-export { OurServicesCard, GalleryCard, TestamonialCard, PriceCard, BlogCard };
+
+export { OurServicesCard, GalleryCard, TestamonialCard, PriceCard };

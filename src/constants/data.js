@@ -20,7 +20,7 @@ import yogaGroup from "../assets/images/wallpaper/group-yoga.jpg"
 
 import gymCouple from "../assets/images/cutout/couple.png";
 import man from "../assets/images/cutout/man.png";
-import womenMidBody from "../assets/images/cutout/female-midbody-2.png";
+import womenMidBody from "../assets/images/cutout/female-midBody.png";
 
 
 import vitalityHavenLogoWhite from "../assets/vitality-haven-logo.svg";
@@ -385,6 +385,86 @@ const vitalityHaven = {
             amenities: ["Beachfront Functional Training", "Samba Dance Cardio", "Carnival-Themed Classes", "Acai Superfood Bar"]
           }
         ]
+      },
+      vitalityHavenSellingPoints: {
+        problemsWithGymHeatlthClubs: [
+          {
+            title: "Lack of Personalization",
+            content: "Most gyms are one-size-fits-all, and that doesn’t work. Everyone’s body, goals, and schedule are different. Yet, 81% of people who sign up for a gym membership quit within the first 6 months (IHRSA)—why? Because they don’t get the guidance or personalization they need to stay motivated or safe."
+          },
+          {
+            title: "Intimidation Factor & Gymtimidation",
+            content: "A 2023 UK study found that 50% of women and 36% of men avoid gyms due to feeling judged or intimidated. Traditional gym environments can be toxic, especially to beginners."
+          },
+          {
+            title: "Lack of Community & Support",
+            content: "According to a survey by Les Mills, 84% of people are more likely to stick with a fitness program when they feel part of a community. Yet most gyms are transactional—scan your card, do your reps, and leave. No connection."
+          },
+          {
+            title: "Overcrowding & Poor Maintenance",
+            content: "Gyms often oversell memberships. A gym might have 3,000 members, but space and equipment for 300. That’s why you’re always waiting for machines or forced into 6 AM slots."
+          },
+          {
+            title: "No Holistic Health Integration",
+            content: "Fitness isn’t just about lifting weights. Mental health, sleep, nutrition, and lifestyle play massive roles. Yet most gyms offer no support in these areas."
+          }
+        ],
+        vitalityHavenSolution: [
+          {
+            title: "Hyper-Personalized Wellness Programs",
+            content: `We use AI-driven fitness assessments combined with professional evaluations to create personalized health blueprints. No more generic workouts. Whether it’s fat loss, strength building, recovery, or holistic balance—we tailor it.`,
+            list: [
+              "Includes mental wellness check-ins",
+              "Nutrition guidance integrated into your plan",
+              "Progress tracked with data you actually understand"
+            ]
+          },
+          {
+            title: "Judgement-Free, Inclusive Environment",
+            content: `Vitality Haven is for every body—literally. Whether you're an elite athlete, a mom trying to bounce back, or someone just starting, you're met wit`,
+            list: [
+              "Separate zones for beginners",
+              "Classes designed specifically for different fitness levels",
+              "Trainers trained in body neutrality and psychological safety"
+            ]
+          },
+          {
+            title: "Strong Community + Group Accountability",
+            content: `We’re big on community. Our app and in-person events connect members based on goals, age, and fitness type don't believe us well... Studies from the Journal of Social Sciences found that people tend to work out harder and longer when they’re around others doing the same thing. We leverage that with real-time virtual workout rooms and live community feeds.`,
+            list: [
+              "Member-only support circles",
+              "Group challenges with actual rewards (not just bragging rights)",
+              "Real-time encouragement through our social wellness platform"
+            ]
+          },
+          {
+            title: "Smart Facility Management",
+            content: `No overcrowding. No broken machines. No “we’ll fix it next week.” We use IoT sensors and smart scheduling to ensure optimal usage of space and equipment.`,
+            list: [
+              "Real-time machine availability tracking via app",
+              "Equipment usage analytics to prevent wear and tear",
+              "Occupancy monitoring to avoid overcrowding"
+            ]
+          },
+          {
+            title: "Integrated Mind-Body Services",
+            content: `We offer not just yoga and meditation, but also mental wellness coaching, sleep improvement programs, and emotional resilience workshops—because mental health is fitness too.`,
+            list: [
+              "Real-time machine availability tracking via app",
+              "Equipment usage analytics to prevent wear and tear",
+              "Occupancy monitoring to avoid overcrowding"
+            ]
+          },
+          {
+            title: "Technology That Makes You Feel Human, Not Just a Number",
+            content: `Vitality Haven isn’t just a health club—it’s an ecosystem.`,
+            list: [
+              "Intuitive mobile app with habit tracking, reminders, and personalized tips",
+              "Virtual classes and challenges to keep you engaged",
+              "Integration with wearables like Fitbit, Apple Watch, and more"
+            ]
+          },
+        ],
       }
     },
 
@@ -1389,7 +1469,7 @@ const vitalityHaven = {
           "Why sleeping after practice improves performance by 20-30%",
           "The surprising way mirror neurons help perfect your form"
         ],
-        featuredImage: "/blog/neuroscience-muscle.jpg",
+        featuredImage: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80",
         researchCited: [
           "Journal of Neurophysiology (2023)",
           "Nature Neuroscience Study on Motor Learning"
@@ -1411,7 +1491,7 @@ const vitalityHaven = {
           "Why chewing gum between sets improves power output",
           "How blue light exposure post-workout accelerates recovery"
         ],
-        featuredImage: "/blog/biohacks-performance.jpg",
+        featuredImage: "https://images.pexels.com/photos/6551166/pexels-photo-6551166.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
         researchCited: [
           "European Journal of Applied Physiology",
           "Journal of Sports Sciences"
@@ -1431,7 +1511,7 @@ const vitalityHaven = {
           "Why compound lifts improve decision-making skills",
           "The ideal rest periods for mental benefits vs physical gains"
         ],
-        featuredImage: "/blog/strength-brain.jpg",
+        featuredImage: "https://images.unsplash.com/photo-1538805060514-97d9cc17730c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1374&q=80",
         researchCited: [
           "Harvard Brain Health Study",
           "Frontiers in Aging Neuroscience"
@@ -1452,7 +1532,7 @@ const vitalityHaven = {
           "Verbal cues that reduce perceived effort by 15%",
           "How to reframe your body's warning signals"
         ],
-        featuredImage: "/blog/90-second-rule.jpg",
+        featuredImage: "https://images.pexels.com/photos/3763872/pexels-photo-3763872.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
         researchCited: [
           "Journal of Applied Physiology",
           "Sports Medicine Research Institute"
@@ -1474,7 +1554,7 @@ const vitalityHaven = {
           "Why your sleeping position affects DOMS (delayed onset muscle soreness)",
           "Sleep supplements that actually work (and 3 that don't)"
         ],
-        featuredImage: "/blog/sleep-recovery.jpg",
+        featuredImage: "https://images.unsplash.com/photo-1545205597-3d9d02c29597?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80",
         researchCited: [
           "National Sleep Foundation Guidelines",
           "Stanford Sleep Research Center"
@@ -1495,7 +1575,7 @@ const vitalityHaven = {
           "Why this works better than caffeine for some people",
           "How to measure your personal response"
         ],
-        featuredImage: "/blog/navy-seal-hack.jpg",
+        featuredImage: "https://images.pexels.com/photos/6295994/pexels-photo-6295994.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
         researchCited: [
           "Journal of Special Operations Medicine",
           "Neuropsychology Review"
@@ -1516,7 +1596,7 @@ const vitalityHaven = {
           "The unexpected benefits of nature sounds for recovery",
           "How to create the perfect workout playlist"
         ],
-        featuredImage: "/blog/workout-music.jpg",
+        featuredImage: "https://images.unsplash.com/photo-1508700115892-45ecd05ae2ad?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1469&q=80",
         researchCited: [
           "Journal of Sports Exercise Psychology",
           "Baylor University Music Study"
@@ -1538,7 +1618,7 @@ const vitalityHaven = {
           "5 techniques to maintain workout focus",
           "How to measure your personal focus threshold"
         ],
-        featuredImage: "/blog/multitasking-gains.jpg",
+        featuredImage: "https://images.pexels.com/photos/3183150/pexels-photo-3183150.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
         researchCited: [
           "Journal of Cognitive Neuroscience",
           "Human Performance Laboratory Studies"
