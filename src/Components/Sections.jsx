@@ -1,8 +1,6 @@
 import { useState, useEffect, useRef } from 'react';
 import PropTypes from 'prop-types';
-import NumberIndicator from './NumberIndicator';
 import Statistics from './Statistics';
-import { cutOut, vitalityHaven } from '../constants/data';
 import { GalleryCard, OurServicesCard, PriceCard, TestamonialCard } from './Card';
 import GradientCircle from './GradientCircle';
 import Dropdown from './Dropdown';
@@ -24,8 +22,8 @@ export const SectionComponent = ({ title, subTitle, subText, style }) => {
 const HeroSection = ({ renderCompanies ,ourMedias, mainHeading, subHeadingText, backgroundImage, video, hasVideo = true, onHover = true }) => {
   return (
     <section aria-label='hero section' className="h-screen relative">
-      <article className='container mx-auto h-full relative flex'>
-        <aside aria-label="social media links" className="h-full hidden md:flex flex-col items-center justify-center">
+      <article className='container mx-auto h-full relative z-20'>
+        <aside aria-label="social media links" className="absolute left-0 h-full hidden md:flex flex-col items-center justify-center">
           <ul className="flex flex-col items-center justify-center gap-7 px-2 z-20">
             {
               ourMedias.map((item, index) => (
@@ -41,11 +39,17 @@ const HeroSection = ({ renderCompanies ,ourMedias, mainHeading, subHeadingText, 
             }
           </ul>
         </aside>
-
-        <section className="h-full flex flex-col items-center justify-center">
-          <h1 className="z-20 px- text-6xl text-center text-white font-semibold uppercase leading-snug ">{ mainHeading }</h1>
-          {renderCompanies}
+        
+        <section className="absolute bottom-36 -right-14 z-20">
+          <h1 className="text-4xl text-white font-semibold uppercase leading-snug w-[25rem]">
+            { mainHeading }
+          </h1>
+          <p className="mt-4 text-white text-sm w-[23rem] leading-snug break-words tracking-wide">
+            {subHeadingText}
+          </p>
         </section>
+
+        {renderCompanies}
 
         
       </article>

@@ -25,7 +25,11 @@ import womenMidBody from "../assets/images/cutout/female-midBody.png";
 
 import vitalityHavenLogoWhite from "../assets/vitality-haven-logo.svg";
 import vitalityHavenLogoBlack from "../assets/vitality-haven-logo--black.svg";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
+import edwardDaniels from "../assets/images/founders/edward-daniels.jpg";
+import horikitaSuzune from "../assets/images/founders/Horikita-suzune.jpg";
+import jordanMasilo from "../assets/images/founders/Jordan-masilo.jpg";
+import thaliaMokoena from "../assets/images/founders/talia-mokoena.jpg"
 
 const vitalityHavenLogo = {
     mainLogoWhite: vitalityHavenLogoWhite,
@@ -387,6 +391,219 @@ const vitalityHaven = {
         ]
       },
       vitalityHavenSellingPoints: {
+        ourStory: "Vitality Haven Health Club was founded in 2021, in the wake of a pandemic-ridden world that revealed one undeniable truth: modern gyms were failing people in more ways than one. Physical health without mental resilience was incomplete. People didn’t just want abs—they wanted vitality. And so, Vitality Haven was born.",
+        ourFounders: [
+          {
+            name: "Jordan Masilo",
+            occupation: "Bodybuilding Coach and Mental Wellness Enthusiast",
+            qualifications: [
+              "Former professional bodybuilder",
+              "Certified Health Coach & Strength Specialist",
+              "Trained over 300+ athletes",
+              "Speaks globally on the intersection of grit and gratitude"
+            ],
+            profileImages: jordanMasilo,
+
+            socialMedia: [
+              "facebook",
+              "instagram"
+            ],
+          },
+          {
+            name: "Dr. Thalia Mokoena",
+            occupation: "Neuroscientist and Yoga Therapist",
+            qualifications: [
+              "Ph.D. in Neurobiology (UCT)",
+              "Certified Yoga Instructor & Breathwork Coach",
+              "Focus: Cognitive performance + emotional regulation",
+              "Owner of the Neurobro podcast"
+            ],
+            socialMedia: [
+              "twitter",
+              "facebook",
+              "youtube",
+              "tiktock"
+            ],
+            profileImages: thaliaMokoena
+          },
+          {
+            name: "Edward Daniels",
+            occupation: "Lifestyle Coach",
+            qualifications: [
+              "Registered Dietitian",
+              "Specializes in African whole-food meal plans",
+              "Host of “Eat for Energy” podcast"
+            ],
+            socialMedia: [
+              "twitter",
+              "instagram",
+              "youtube",
+              "ticktock"
+            ],
+            profileImages: edwardDaniels
+          },
+          {
+            name: "Horikita Suzune",
+            occupation: "Youth & Elder Fitness Coordinator",
+            qualifications: [
+              "Focuses on intergenerational movement routines",
+              "Helps elders regain mobility + teens manage energy bursts"
+            ],
+            profileImages: horikitaSuzune,
+
+            socialMedia: [
+              "twitter",
+              "instagram",
+              "youtube",
+              "ticktock"
+            ],
+          },
+        ],
+
+        mission: {
+          title: "Why do we exist?",
+          quote: "We exist to awaken the full potential of the human body, mind, and spirit—through evidence-based training, neuroscience-aligned recovery, and community-driven motivation.",
+          whatGymsFocusOn: {
+            title: "The traditional gym focuses on aesthetics. We focus on:",
+            list: [
+              "Longevity",
+              "Emotional well-being",
+              "Cognitive sharpness",
+              "And yes a killer physique too."
+            ],
+          }
+        },
+
+        ourVision: {
+          title: " OUR VISION VS OTHER HEALTH CLUBS",
+          mostGymOfferingsComparison : {
+            gymsInGeneral: {
+              title: "Most Gyms offer",
+              list: [
+                "Cardio and weights",
+                "Generic classes",
+                "Limited personal development"
+              ]
+            },
+            vitalityHaven: {
+              title: "Vitality Haven, on the other hand, integrates:",
+              list: [
+                "Mind-body alignment (yoga + meditation backed by neuroscience)",
+                "Functional diagnostics (real-time body scans + HRV testing)",
+                "Coaching that adapts to life cycles (teen, adult, senior)"
+              ]
+            },
+            quote: "Our vision is to be the first health club where members don’t just train—they transform.",
+          }
+        },
+
+        valuePropersitionInfographic: [
+          {
+            title: "SCIENCE MEETS SWEAT",
+            list: [
+              "Biofeedback-driven workouts (HRV, sleep quality, cortisol monitoring)",
+              "Personalized fitness journeys"
+            ],
+          },
+          {
+            title: "BRAIN + BODY TRAINING",
+            list: [
+              "Programs built with input from neuroscientists",
+              "Workouts that also improve focus, memory, and emotional regulation"
+            ]
+          },
+          {
+            title: "COMMUNITY + CARE",
+            list: [
+              "Family-based memberships",
+              "Community wellness events",
+              "Lifestyle mentorship programs"
+            ]
+          },
+          {
+            title: "ELITE BODYBUILDING ROOTS",
+            list: [
+              "Pro-level bodybuilding coaching for all levels",
+              "Fitness as a tool for discipline, confidence, and purpose",
+            ]
+          }
+        ],
+
+        whatLeadToTheirApproach: {
+            title: "WHAT LED US TO HOLISTIC HEALTH?",
+            subText: "Let’s talk research.",
+            researchContent: [
+              {
+                title: "Burnout epidemic:",
+                content: "According to Gallup (2023), 76% of employees experience burnout at least sometimes. Gym workouts alone don’t resolve chronic stress. Mind-body practices reduce cortisol by up to 32%, according to the APA."
+              },
+              {
+                title: "Mental health stats:",
+                content: "WHO reports a 25% increase in anxiety and depression globally post-COVID. Holistic training that combines cardio, strength, breathwork, and community support improves mental health outcomes by 35% compared to traditional training."
+              },
+              {
+                title: "Cognitive benefits of exercise:",
+                content: "According to a Harvard study (2022), regular aerobic exercise increases hippocampal volume, boosting memory and learning. Add mindfulness—and you strengthen prefrontal cortex activation, the seat of judgment and planning."
+              },
+            ]
+        },
+
+        neuroscienceResearch: {
+          title: "THE NEUROSCIENCE BEHIND OUR SYSTEM",
+          quote: "Movement is medicine. But mindful movement is a revolution.",
+          research: [
+            {
+              title: "Neuroplasticity",
+              research: "We design routines that challenge both body and brain. Think: complex movement patterns, memory drills, and problem-solving during workouts. These strengthen neural networks.",
+            },
+            {
+              title: "Binaural beats & breathwork",
+              research: "Used in recovery sessions to stimulate alpha and theta brainwaves—proven to reduce anxiety and improve sleep.",
+            },
+            {
+              title: "Heart Rate Variability (HRV) Tracking",
+              research: "Higher HRV = better stress response. We tailor recovery days using your HRV data."
+            },
+            {
+              title: "Dopamine Pathways",
+              research: "Our routines follow the “effort-reward-effort” pattern, shown to build habit formation and improve mood regulation."
+            }
+          ]
+        },
+
+        problemsVitalityHavenSolves: {
+          title: "PROBLEMS WE’RE SOLVING (REAL GYM INDUSTRY PAINS)",
+          tabelContent: [
+            {
+              tableHeading: "Problem",
+              tableColumn: [
+                "High dropout rates",
+                "Lack of personalization",
+                "Mental health neglect",
+                "Poor recovery education"
+              ]
+            },
+            {
+              tableHeading: "Industry Stat",
+              tableColumn: [
+                "50% of new members quit in 6 months (IHRSA)",
+                "74% of members feel programs are too generic",
+                "Only 15% of clubs offer wellness programs",
+                "Most gyms ignore sleep & mobility"
+              ]
+            },
+            {
+              tableHeading: "Vitality Haven’s Cure",
+              tableColumn: [
+                "Personal accountability coaches & community pods",
+                "AI-assisted training plans & regular 1:1 reviews",
+                "Integrated emotional health and meditation suites",
+                "Full spectrum recovery rooms & sleep tracking integration"
+              ]
+            },
+          ]
+        },
+
         problemsWithGymHeatlthClubs: [
           {
             title: "Lack of Personalization",
@@ -409,6 +626,7 @@ const vitalityHaven = {
             content: "Fitness isn’t just about lifting weights. Mental health, sleep, nutrition, and lifestyle play massive roles. Yet most gyms offer no support in these areas."
           }
         ],
+
         vitalityHavenSolution: [
           {
             title: "Hyper-Personalized Wellness Programs",
