@@ -62,8 +62,8 @@ const HomePage = () => {
 
         primaryImage={cutOut.womenBodyBuilder}
 
-        listOne={ vitalityHaven.gymInfo.vitalityHavenSellingPoints.problemsWithGymHeatlthClubs }
-        listTwo={ vitalityHaven.gymInfo.vitalityHavenSellingPoints.vitalityHavenSolution }
+        listOne={ vitalityHaven.gymInfo.sellingPoints.problemsWithGymHeatlthClubs }
+        listTwo={ vitalityHaven.gymInfo.sellingPoints.vitalityHavenSolution }
 
 
       />

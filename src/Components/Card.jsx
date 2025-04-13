@@ -4,6 +4,8 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowRight, faArrowTrendUp, faStar, faStarHalfAlt } from '@fortawesome/free-solid-svg-icons';
 import { faStar as faStarRegular } from '@fortawesome/free-regular-svg-icons';
 import { faFacebook, faInstagram, faLinkedin, faTiktok, faTwitter, faYoutube } from '@fortawesome/free-brands-svg-icons';
+import "../assets/styles/effect.css"
+
 
 const OurServicesCard = ({ object }) => {
   const serviceCategories = Object.keys(object);
@@ -248,8 +250,42 @@ const PriceCard = ({ pricePlan, price, month, subText, list }) => {
   )
 }
 
+const FoundersCard = ({ profile, name, socials, occupation, qualifications }) => {
+  return (
+    <article className='card p-6 rounded-3xl shadow-xl flex flex-col h-full justify-center items-center gap-6 text-white w-full  bg-gray-800'>
+      {/* Profile Image & Name */}
+      <section className='flex flex-col items-center gap-3'>
+        <img src={profile} alt={name} className='size-40 rounded-full object-cover border-4 border-orange-500' />
+        <div className='text-center'>
+          <h3 className='md:text-4xl text-2xl font-bold'>{name}</h3>
+          <h4 className='text-sm text-gray-400 mt-1'>{occupation}</h4>
+        </div>
+      </section>
+
+      {/* Qualifications */}
+      <section className='w-full flex flex-col items-center'>
+        <h5 className='text-sm font-semibold text-orange-400 mb-2'>Qualifications</h5>
+        <ul className='flex flex-col gap-1 text-gray-300 text-sm list-disc list-inside'>
+          {qualifications.map((item, index) => (
+            <li key={index}>{item}</li>
+          ))}
+        </ul>
+      </section>
+
+      {/* Socials */}
+      <section className='flex gap-4 justify-center mt-4'>
+        {socials.map((item, index) => (
+          <li key={index} className='list-none text-white text-xl hover:text-orange-400 transition-colors duration-300'>
+            {item}
+          </li>
+        ))}
+      </section>
+    </article>
+  )
+}
 
 
 
 
-export { OurServicesCard, GalleryCard, TestamonialCard, PriceCard };
+
+export { OurServicesCard, GalleryCard, TestamonialCard, PriceCard, FoundersCard  };

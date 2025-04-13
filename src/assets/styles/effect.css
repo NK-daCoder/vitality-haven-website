@@ -38,13 +38,8 @@
 
 .price-card {
     transition: all 0.3s ease;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
-  
-.price-card:hover {
-    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
-    transform: translateY(-2px);
-}
+
   
 .price-card button {
     transition: background-color 0.3s ease;
@@ -61,4 +56,13 @@
     box-shadow: 35px 35px 68px 0px rgba(255, 125, 0, 0.5), 
     inset -8px -8px 16px 0px rgba(255, 125, 0, 0.6), 
     inset 0px 11px 28px 0px rgb(255, 255, 255);
+}
+
+.box-shadow--orange {
+    box-shadow: 0 0 68px 5px rgba(255, 123, 0, 0.363) !important;
+}
+
+.our-founders--bg-image {
+    background-image: url("https://img.freepik.com/free-vector/sports-style-halftone-memphis-black-background_1017-33619.jpg?t=st=1744568678~exp=1744572278~hmac=e00b2684470301d91afda7d6b71e9acaaee07daf0c6d52e4115c140e2a576357&w=740");
+    background-repeat: no-repeat;
 }

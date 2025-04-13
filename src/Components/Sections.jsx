@@ -18,7 +18,6 @@ export const SectionComponent = ({ title, subTitle, subText, style }) => {
 }
 
 
-
 const HeroSection = ({ renderCompanies ,ourMedias, mainHeading, subHeadingText, backgroundImage, video, hasVideo = true, onHover = true }) => {
   return (
     <section aria-label='hero section' className="h-screen relative">
@@ -109,8 +108,6 @@ HeroSection.defaultProps = {
   hasVideo: true,
   onHover: true
 };
-
-
 
 
 const AboutSection = ({ title, subTitle, subText, statistics, videoSource }) => {

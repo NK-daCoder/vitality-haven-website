@@ -84,8 +84,8 @@ const vitalityHaven = {
       slogan: "Where Strength Meets Serenity",
       description: "A premium fitness sanctuary offering state-of-the-art equipment, expert trainers, and holistic wellness programs designed to transform your body and mind.",
       gymStats: {
-        founded: 2015,
-        yearsInBusiness: 10,
+        founded: 2021,
+        yearsInBusiness: 4,
         totalMembers: 3500,
         expertTrainers: 12,
         members: 5000,
@@ -390,8 +390,12 @@ const vitalityHaven = {
           }
         ]
       },
-      vitalityHavenSellingPoints: {
-        ourStory: "Vitality Haven Health Club was founded in 2021, in the wake of a pandemic-ridden world that revealed one undeniable truth: modern gyms were failing people in more ways than one. Physical health without mental resilience was incomplete. People didn’t just want abs—they wanted vitality. And so, Vitality Haven was born.",
+
+      sellingPoints: {
+        ourStory: {
+          title: "Our Story",
+          content: "Vitality Haven Health Club was founded in 2021, in the wake of a pandemic-ridden world that revealed one undeniable truth: modern gyms were failing people in more ways than one. Physical health without mental resilience was incomplete. People didn’t just want abs—they wanted vitality. And so, Vitality Haven was born.",
+        },
         ourFounders: [
           {
             name: "Jordan Masilo",
