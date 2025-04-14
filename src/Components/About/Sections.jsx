@@ -2,6 +2,7 @@ import React, { useEffect, useRef, useState } from 'react'
 import GradientCircle from '../GradientCircle'
 import "../../assets/styles/effect.css"
 import { FoundersCard } from '../Card'
+import { motion } from "framer-motion";
 
 const HeroSection = ({ title, subtext, statistics, decorationImage, partners }) => {
   return (
@@ -12,7 +13,7 @@ const HeroSection = ({ title, subtext, statistics, decorationImage, partners }) 
 
       {/* Left Content */}
       <section className='flex flex-col gap-6 max-w-xl z-20'>
-        <h1 className='text-4xl md:text-2xl font-semibold text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-orange-100'>
+        <h1 className='text-4xl md:text-2xl font-semibold text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-red-500'>
           {title}
         </h1>
         <p className='text-sm text-gray-300 leading-relaxed w-[30rem]'>
@@ -178,6 +179,149 @@ const OurFoundersSection = ({ title, subtext, data }) => {
   )
 }
 
+const OurMissionSection = ({ title, subtext, dataList, secondaryTitle, secondarySubText }) => {
+  return (
+    <section className="container mx-auto px-4 py-28 flex flex-col items-center gap-3">
+      <section className='h-screen flex flex-col justify-center items-center'>
+        <h2 className="tracking-tight text-center  text-orange-500 text-4xl md:text-2xl font-semibold">
+          {title}
+        </h2>
+        <p className="text-base text-center text-gray-300 mb-10 max-w-2xl">{subtext}</p>
+      </section>
+      
+      <section className='flex flex-col items-center gap-2'>
+        <h3 className="tracking-tight text-center text-orange-500 text-4xl md:text-2xl font-semibold">
+          { secondaryTitle }
+        </h3>
+        <p className="text-base text-center text-gray-300 mb-10 max-w-2xl">{ secondarySubText }</p>
+        <ul className="flex flex-wrap gap-8 items-center justify-center">
+          {dataList.map((item, index) => (
+            <li key={`what-gyms-focus-on-${index}`} className='w-[19.2rem]'>
+              <article className="card rounded-2xl p-6 shadow-lg hover:shadow-xl transition-shadow duration-300 h-full">
+                <section className="flex flex-col gap-4 h-full items-center">
+                  <img src={item.icon} alt={item.content} className='size-20' />
+                  
+                  <h3 className="text-xl font-semibold text-white">
+                    {item.content}
+                  </h3>
+
+                  <div>
+                    <h4 className="text-sm font-bold text-orange-400 mb-2">
+                      {item.why.headLine}
+                    </h4>
+                    <ul className="list-disc list-inside space-y-2 text-sm text-gray-300">
+                      {item.why.evidence.map((ev, evIndex) => (
+                        <li key={`evidence-${index}-${evIndex}`}>
+                          {ev}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </section>
+              </article>
+            </li>
+          ))}
+        </ul>
+      </section>
+    </section>
+  );
+};
+
+const OurVisionSection = ({ data }) => {
+  const { gymsInGeneral, vitalityHaven } = data.mostGymOfferingsComparison;
+
+  return (
+    <section className="container mx-auto px-4 py-24 flex flex-col items-center">
+      <h3 className="text-center tracking-tight text-orange-500 text-4xl md:text-2xl font-semibold mb-12">
+        {data.title}
+      </h3>
+
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 w-full max-w-5xl h-[25rem]">
+        <motion.div
+          className="bg-white/5 p-6 rounded-2xl shadow-md border border-white/10"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+        >
+          <h4 className="text-white text-xl font-bold mb-4">{gymsInGeneral.title}</h4>
+          <ul className="list-disc list-inside text-gray-300 space-y-2 text-sm">
+            {gymsInGeneral.list.map((item, index) => (
+              <li key={`gym-${index}`}>{item}</li>
+            ))}
+          </ul>
+        </motion.div>
+
+        <motion.div
+          className="bg-gradient-to-br h-full from-orange-600 via-orange-500 to-yellow-400 p-6 rounded-2xl shadow-xl border border-white/10"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+        >
+          <h4 className="text-white text-xl font-bold mb-4">{vitalityHaven.title}</h4>
+          <ul className="list-disc list-inside text-white space-y-2 text-sm">
+            {vitalityHaven.list.map((item, index) => (
+              <li key={`vh-${index}`}>{item}</li>
+            ))}
+          </ul>
+        </motion.div>
+      </div>
+    </section>
+  );
+};
+
+const OurJourneyToHolisticWellbeingSection = ({ data }) => {
+  return (
+    <section className="container mx-auto lg:h-screen px-4 flex flex-col items-center justify-center">
+      <h3 className="text-center tracking-tight text-orange-500 text-4xl md:text-2xl font-semibold mb-4">
+        {data.title}
+      </h3>
+      <p className="text-center text-gray-300 max-w-2xl mb-12">{data.subText}</p>
+
+      <ul className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 w-full max-w-6xl">
+        {data.researchContent.map((item, index) => (
+          <motion.li
+            key={`what-lead-to-our-approach-${index}`}
+            className="bg-white/5 border border-white/10 rounded-2xl p-6 shadow-md flex flex-col"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: index * 0.1 }}
+          >
+            <h4 className="text-white text-lg font-semibold mb-2">{item.title}</h4>
+            <p className="text-gray-300 text-sm flex-grow">{item.content}</p>
+          </motion.li>
+        ))}
+      </ul>
+    </section>
+  );
+};
+
+const OurSystemSection = ({ data }) => {
+  return (
+    <section className="container mx-auto px-4 py-28 flex flex-col items-center">
+      <h3 className="text-center tracking-tight text-orange-500 text-4xl md:text-3xl font-semibold mb-4">
+        {data.title}
+      </h3>
+      <p className="text-center text-gray-300 max-w-2xl mb-12">{data.subText}</p>
+
+      <ul className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 w-full max-w-6xl">
+        {data.research.map((item, index) => (
+          <motion.li
+            key={`neuroscience-${index}`}
+            className="bg-white/5 border border-white/10 rounded-2xl p-6 shadow-md flex flex-col"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: index * 0.1 }}
+          >
+            <h4 className="text-white text-lg font-semibold mb-2">{item.title}</h4>
+            <p className="text-gray-300 text-sm flex-grow">{item.research}</p>
+          </motion.li>
+        ))}
+      </ul>
+    </section>
+  );
+};
 
 
-export { HeroSection, OurFoundersSection }
+
+
+export { HeroSection, OurFoundersSection, OurMissionSection, OurVisionSection, OurJourneyToHolisticWellbeingSection, OurSystemSection }

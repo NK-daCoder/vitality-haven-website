@@ -29,7 +29,12 @@ import vitalityHavenLogoBlack from "../assets/vitality-haven-logo--black.svg";
 import edwardDaniels from "../assets/images/founders/edward-daniels.jpg";
 import horikitaSuzune from "../assets/images/founders/Horikita-suzune.jpg";
 import jordanMasilo from "../assets/images/founders/Jordan-masilo.jpg";
-import thaliaMokoena from "../assets/images/founders/talia-mokoena.jpg"
+import thaliaMokoena from "../assets/images/founders/talia-mokoena.jpg";
+
+import shreddedBody from "../assets/images/icons/Killer-body.png";
+import brainIcon from "../assets/images/icons/Cognitive-Sharpness.png";
+import longevityIcon from "../assets/images/icons/Longevity.png";
+import emotionalWellbeing from "../assets/images/icons/Emotional-wellbeing.png"
 
 const vitalityHavenLogo = {
     mainLogoWhite: vitalityHavenLogoWhite,
@@ -465,16 +470,58 @@ const vitalityHaven = {
         ],
 
         mission: {
-          title: "Why do we exist?",
-          quote: "We exist to awaken the full potential of the human body, mind, and spirit—through evidence-based training, neuroscience-aligned recovery, and community-driven motivation.",
+          title: "Our Mission",
+          quote: "At Vitality Haven, we’re here to help you thrive—body, mind, and spirit. Through science-backed training, recovery grounded in neuroscience, and the power of community, we turn potential into real, lasting vitality.",
           whatGymsFocusOn: {
-            title: "The traditional gym focuses on aesthetics. We focus on:",
+            title: "Why Would you stay?",
+            subText: "While most gyms chase aesthetics. We train for something deeper with these focused points:",
             list: [
-              "Longevity",
-              "Emotional well-being",
-              "Cognitive sharpness",
-              "And yes a killer physique too."
-            ],
+              {
+                icon: longevityIcon,
+                content: "Longevity",
+                why: {
+                  headLine: "Move with purpose, live with power.",
+                  evidence: [
+                    "The CDC (2022) reports that strength training just twice a week can cut all-cause mortality risk by 21%.",
+                    "Blue Zones research—based on the world’s longest-living populations—shows that daily movement, low stress, and social connection are as vital as nutrition or genetics."
+                  ]
+                }
+              },
+              {
+                icon: emotionalWellbeing,
+                content: "Emotional Well-being",
+                why: {
+                  headLine: "Train the body, free the mind.",
+                  evidence: [
+                    "According to the APA, people who exercise three or more times per week are 43% less likely to experience depression.",
+                    "Yoga and meditation reduce amygdala overactivation (stress/fear response) and increase GABA levels, which calm the nervous system.",
+                    "Harvard Medical School found that breathwork practices like box breathing reduce cortisol by up to 32% in under 10 minutes."
+                  ]
+                }
+              },
+              {
+                icon: brainIcon,
+                content: "Cognitive Sharpness",
+                why: {
+                  headLine: "Sharper mind. Stronger body.",
+                  evidence: [
+                    "A 2021 Nature Neuroscience meta-analysis showed that exercise enhances executive function, memory, and learning. Aerobic activity also boosts BDNF—a key neurochemical for brain growth.",
+                    "Resistance training can reduce cognitive decline by up to 40% in older adults (Journal of Alzheimer's Disease, 2020)."
+                  ]
+                }
+              },
+              {
+                icon: shreddedBody,
+                content: "Yes, a strong physique too.",
+                why: {
+                  headLine: "Looks matter. But they’re not the only thing that does.",
+                  evidence: [
+                    "The ACSM confirms strength training improves metabolism, insulin sensitivity, bone density, and lean mass.",
+                    "Still, when goals are purely aesthetic, motivation drops fast—up to 50% of gym-goers quit within 6 months (IHRSA, 2023). We train for more than the mirror."
+                  ]
+                }
+              }
+            ]
           }
         },
 
@@ -554,7 +601,7 @@ const vitalityHaven = {
 
         neuroscienceResearch: {
           title: "THE NEUROSCIENCE BEHIND OUR SYSTEM",
-          quote: "Movement is medicine. But mindful movement is a revolution.",
+          subText: "Movement is medicine. But mindful movement is a revolution.",
           research: [
             {
               title: "Neuroplasticity",

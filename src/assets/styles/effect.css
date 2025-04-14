@@ -65,4 +65,5 @@
 .our-founders--bg-image {
     background-image: url("https://img.freepik.com/free-vector/sports-style-halftone-memphis-black-background_1017-33619.jpg?t=st=1744568678~exp=1744572278~hmac=e00b2684470301d91afda7d6b71e9acaaee07daf0c6d52e4115c140e2a576357&w=740");
     background-repeat: no-repeat;
+    background-attachment: fixed;
 }

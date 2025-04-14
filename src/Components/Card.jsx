@@ -276,7 +276,7 @@ const FoundersCard = ({ profile, name, socials, occupation, qualifications }) =>
       <section className='flex gap-4 justify-center mt-4'>
         {socials.map((item, index) => (
           <li key={index} className='list-none text-white text-xl hover:text-orange-400 transition-colors duration-300'>
-            {item}
+            {GetIconComponent(item)}
           </li>
         ))}
       </section>
