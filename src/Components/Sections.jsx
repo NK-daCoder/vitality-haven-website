@@ -655,6 +655,61 @@ const BlogSection = ({ title, subTitle, subText, link, blogPosts }) => {
   );
 }
 
+const ContactUsSection = ({ title, subTitle, subText, data }) => {
+  return (
+    <section className='mx-auto container'>
+      <SectionComponent
+        title={title}
+        subTitle={subTitle}
+        subText={subText}
+      />
+
+      <section className="grid grid-cols-1 md:grid-cols-2 gap-8 py-16">
+        {/* Contact Info */}
+        <article className="backdrop-blur-lg bg-white/5 border border-white/10 rounded-3xl p-6 shadow-xl transition hover:shadow-orange-500/10">
+          <h3 className="text-2xl font-semibold text-orange-400 mb-4">Contact Information</h3>
+          <ul className="text-white/80 text-sm space-y-2">
+            <li><span className="text-white font-medium">General Inquiries:</span> {data.generalInquiries}</li>
+            <li><span className="text-white font-medium">Careers:</span> {data.carres}</li>
+            <li><span className="text-white font-medium">Press:</span> {data.press}</li>
+            <li><span className="text-white font-medium">Phone:</span> {data.phone}</li>
+          </ul>
+        </article>
+
+        {/* Contact Form Placeholder */}
+        <form className="backdrop-blur-lg bg-white/5 border border-white/10 rounded-3xl p-6 shadow-xl transition hover:shadow-orange-500/10">
+          <h3 className="text-2xl font-semibold text-orange-400 mb-4">Send Us a Message</h3>
+          {/* Example Form Fields */}
+          <div className="flex flex-col space-y-4">
+            <input
+              type="text"
+              placeholder="Your Name"
+              className="bg-transparent border border-white/10 rounded-xl px-4 py-2 text-white placeholder-white/50 focus:outline-none focus:ring-2 focus:ring-orange-400"
+            />
+            <input
+              type="email"
+              placeholder="Your Email"
+              className="bg-transparent border border-white/10 rounded-xl px-4 py-2 text-white placeholder-white/50 focus:outline-none focus:ring-2 focus:ring-orange-400"
+            />
+            <textarea
+              placeholder="Your Message"
+              rows="4"
+              className="bg-transparent border border-white/10 rounded-xl px-4 py-2 text-white placeholder-white/50 focus:outline-none focus:ring-2 focus:ring-orange-400"
+            />
+            <button
+              type="submit"
+              className="bg-orange-500 hover:bg-orange-600 text-white font-semibold py-2 px-6 rounded-xl transition"
+            >
+              Send Message
+            </button>
+          </div>
+        </form>
+      </section>
+    </section>
+  );
+};
+
+
 const FooterSection = ({ quickLinks, contactInfo, careers, legal, newsletter, mobileApp }) => {
   return (
     <footer className="bg-gray-900 text-gray-300 py-12 px-4 sm:px-6 lg:px-8">
@@ -823,7 +878,6 @@ const FooterSection = ({ quickLinks, contactInfo, careers, legal, newsletter, mo
 
 export { 
   HeroSection, 
-  
   AboutSection, 
   ServicesSection, 
   WhyUsSection, 
@@ -832,5 +886,6 @@ export {
   LocationSection,
   MobileAppSection,
   BlogSection,
+  ContactUsSection,
   FooterSection 
 };

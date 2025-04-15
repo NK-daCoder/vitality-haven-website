@@ -1,5 +1,5 @@
 import React from 'react'
-import { AboutSection, BlogSection, FooterSection, HeroSection, LocationSection, MobileAppSection, OurPlans, ServicesSection, TestimonialsSection, WhyUsSection } from '../Components/Sections'
+import { AboutSection, BlogSection, ContactUsSection, FooterSection, HeroSection, LocationSection, MobileAppSection, OurPlans, ServicesSection, TestimonialsSection, WhyUsSection } from '../Components/Sections'
 import { cutOut, socialMediaIcons, vitalityHaven } from '../constants/data'
 
 const HomePage = () => {
@@ -102,6 +102,13 @@ const HomePage = () => {
         subTitle={"Our Global Presence: Fitness Centers Around The World"} 
         subText={"No matter where you are our gyms are here to help you reach your fitness goals. With location across the globe. findig a gym near you is easy. Explore our map and join our wold wide community Today."} 
         numberOfLocations={ vitalityHaven.gymInfo.gymStats.locations.length }
+      />
+
+      <ContactUsSection 
+        title={"contact us"} 
+        subTitle={"Dont be shy. Come Say hello to Us"} 
+        subText={""}
+        data={ vitalityHaven.contact }
       />
 
       <BlogSection 
