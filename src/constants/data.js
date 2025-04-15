@@ -624,7 +624,7 @@ const vitalityHaven = {
 
         problemsVitalityHavenSolves: {
           title: "PROBLEMS WE’RE SOLVING (REAL GYM INDUSTRY PAINS)",
-          tabelContent: [
+          tableContent: [
             {
               tableHeading: "Problem",
               tableColumn: [

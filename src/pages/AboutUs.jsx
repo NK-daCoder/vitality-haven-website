@@ -1,5 +1,5 @@
 import React from 'react'
-import { HeroSection, OurFoundersSection, OurJourneyToHolisticWellbeingSection, OurMissionSection, OurSystemSection, OurVisionSection } from '../Components/About/Sections'
+import { HeroSection, OurFoundersSection, OurJourneyToHolisticWellbeingSection, OurMissionSection, OurSystemSection, OurVisionSection, VitalitySolutionsOfferingsSection } from '../Components/About/Sections'
 import { cutOut, vitalityHaven } from '../constants/data.js'
 import { FooterSection } from '../Components/Sections'
 
@@ -30,6 +30,10 @@ const AboutUs = () => {
 
         <OurVisionSection
           data={vitalityHaven.gymInfo.sellingPoints.ourVision} 
+        />
+
+        <VitalitySolutionsOfferingsSection 
+          data={ vitalityHaven.gymInfo.sellingPoints.problemsVitalityHavenSolves }
         />
 
         <OurJourneyToHolisticWellbeingSection 

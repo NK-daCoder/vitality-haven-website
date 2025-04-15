@@ -113,10 +113,10 @@ const OurFoundersSection = ({ title, subtext, data }) => {
   };
 
   return (
-    <section className='py-20 flex flex-col gap-3 bg-cover bg-no-repeat our-founders--bg-image'>
+    <section className='py-28 flex flex-col gap-3 bg-cover bg-no-repeat our-founders--bg-image'>
       <h2 className='text-center text-orange-500 text-4xl md:text-2xl font-semibold'>{title}</h2>
       <p className="text-sm text-gray-300 text-center ">{subtext}</p>
-      <article className='relative container mx-auto py-10 h-screen'>
+      <article className='relative container mx-auto py-10'>
         <section 
           className="relative w-full z-20 mt-10 overflow-hidden"
           onMouseEnter={() => setIsPaused(true)}
@@ -227,6 +227,77 @@ const OurMissionSection = ({ title, subtext, dataList, secondaryTitle, secondary
   );
 };
 
+const VitalitySolutionsOfferingsSection = ({ data }) => {
+  // Early return if data is missing
+  if (!data || !Array.isArray(data.tableContent)) {
+    return <p className="text-center text-red-400">Invalid or missing data.</p>;
+  }
+
+  // Find the maximum number of rows across all columns
+  const maxRows = Math.max(...data.tableContent.map(col => col.tableColumn.length));
+
+  return (
+    <section className="container mx-auto px-4 py-24">
+      <h2 className="tracking-tight text-center text-orange-500 text-4xl md:text-3xl font-semibold mb-12">
+        {data.title}
+      </h2>
+
+      {/* Desktop Table */}
+      <div className="hidden md:block overflow-x-auto rounded-2xl border border-white/10">
+        <table className="min-w-full table-auto text-sm text-left text-gray-300">
+          <thead className="bg-orange-600/10 backdrop-blur">
+            <tr>
+              {data.tableContent.map((item, index) => (
+                <th
+                  key={`heading-${index}`}
+                  className="px-6 py-4 text-orange-400 font-semibold text-base"
+                >
+                  {item.tableHeading}
+                </th>
+              ))}
+            </tr>
+          </thead>
+          <tbody>
+            {[...Array(maxRows)].map((_, rowIndex) => (
+              <tr key={`row-${rowIndex}`} className="border-t border-white/10">
+                {data.tableContent.map((col, colIndex) => (
+                  <td key={`col-${colIndex}`} className="px-6 py-4 text-gray-200">
+                    {col.tableColumn[rowIndex] || "-"}
+                  </td>
+                ))}
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+
+      {/* Mobile View */}
+      <div className="md:hidden flex flex-col gap-6">
+        {data.tableContent.map((item, index) => (
+          <div
+            key={`mobile-item-${index}`}
+            className="bg-white/5 border border-white/10 rounded-2xl p-4 shadow"
+          >
+            <h3 className="text-orange-400 font-semibold mb-2">
+              {item.tableHeading}
+            </h3>
+
+            <ul>
+              {item.tableColumn.map((value, valIndex) => (
+                <li key={`data-${valIndex}`} className="text-white text-sm mb-1">
+                  {value}
+                </li>
+              ))}
+            </ul>
+          </div>
+        ))}
+      </div>
+    </section>
+  );
+};
+
+
+
 const OurVisionSection = ({ data }) => {
   const { gymsInGeneral, vitalityHaven } = data.mostGymOfferingsComparison;
 
@@ -324,4 +395,12 @@ const OurSystemSection = ({ data }) => {
 
 
 
-export { HeroSection, OurFoundersSection, OurMissionSection, OurVisionSection, OurJourneyToHolisticWellbeingSection, OurSystemSection }
+export { 
+  HeroSection, 
+  OurFoundersSection, 
+  OurMissionSection, 
+  OurVisionSection, 
+  OurJourneyToHolisticWellbeingSection, 
+  OurSystemSection, 
+  VitalitySolutionsOfferingsSection 
+}
